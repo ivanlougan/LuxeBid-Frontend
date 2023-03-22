@@ -25,10 +25,17 @@ body {
   flex-flow: row;
   align-items: center;
   justify-content: space-around;
-}
 
+  font-size: 20px;
+
+  border: 2px solid rgb(0, 0, 0);
+  
+/* Optional: Have Navigation bar always be on top of the screen when scrolling down */
+  position: sticky;
+  top: 0px;
+
+}
 
 .profileBox {
   color: blueviolet;
 }
-
