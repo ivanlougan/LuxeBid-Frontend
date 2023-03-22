@@ -1,3 +1,4 @@
+
 import { profile } from "console";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -31,6 +32,4 @@ const Profile = (props) => {
 
 }
 
-
-export default profile;
 

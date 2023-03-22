@@ -1,5 +1,17 @@
+
+
+/* Universal styling for every page */
+
+* {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 body {
-  background-image: -moz-linear-gradient(rgb(255, 19, 247), blue);
+  margin: 0;
+  background: no-repeat;
+  background-color: #4158D0;
+  background-image: linear-gradient(0deg, #4158D0 0%, #C850C0 46%, #ff7072 100%);
+
 }
 
 
@@ -7,8 +19,16 @@ body {
   text-align: center;
 }
 
+
+#navbar {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
 .profileBox {
   color: blueviolet;
 }
-
 

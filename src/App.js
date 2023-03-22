@@ -1,6 +1,15 @@
-
+import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import './App.css';
+
+// Pages
+import Home from "./pages/home";
+import Checkout from "./pages/checkout";
+import Profile from "./pages/profile";
+import Signup from "./pages/signup";
+
+//Components
+import HeaderBar from "./components/header/Header"
 
 // import { authentication } from './utils/games/getGames';
 
@@ -9,6 +18,7 @@ function App() {
   // Global States
   const [gamesData, setGamesData] = useState([])
   const [errorMsg, setErrorMsg] = useState(null)
+  const [signMsg, setSignMsg] = useState(null)
   const [user, setUser] = useState({
     username: null,
     email: null,
@@ -42,10 +52,25 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>LuxeBids</h1>
-        {errorMsg !== null && <h3>{errorMsg}</h3>}
-      </header>
+
+      <HeaderBar />
+
+      <BrowserRouter>
+        <nav id="navbar">
+          <Link to="/">Home</Link>
+          <Link to="/signup">Signup</Link>
+          <Link to="/checkout">Checkout</Link>
+          <Link to="/profile">Profile</Link>
+        </nav>
+
+        <Routes>
+          <Route path="/" element={<Home></Home>}></Route>
+          <Route path="signup" element={<Signup></Signup>}></Route>
+          <Route path="checkout" element={<Checkout></Checkout>}></Route>
+          <Route path="profile" element={<Profile></Profile>}></Route>
+        </Routes>
+      </BrowserRouter>
+
 
       <div>
         {gamesData.map((game, index) => {
