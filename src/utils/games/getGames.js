@@ -1,5 +1,4 @@
 // Only call on this function to generate an API authorization token
-// Might be best to hide this link in .env?
 export const authentication = async () => {
     try {
         const response = await fetch(`${process.env.AUTH}`, {
