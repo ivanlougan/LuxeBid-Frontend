@@ -8,6 +8,9 @@ import Checkout from "./pages/checkout";
 import Profile from "./pages/profile";
 import Signup from "./pages/signup";
 
+//Components
+import HeaderBar from "./components/header/Header"
+
 // import { authentication } from './utils/games/getGames';
 
 function App() {
@@ -15,6 +18,7 @@ function App() {
   // Global States
   const [gamesData, setGamesData] = useState([])
   const [errorMsg, setErrorMsg] = useState(null)
+  const [signMsg, setSignMsg] = useState(null)
   const [user, setUser] = useState({
     username: null,
     email: null,
@@ -24,7 +28,7 @@ function App() {
   useEffect(() => {
     const IGDBgames = async () => {
       try {
-          const response = await fetch("http://localhost/getGames", {
+          const response = await fetch(`${process.env.REACT_APP_DEV_URL}getGames`, {
               method: "POST",
               mode: "cors",
               headers: {
@@ -48,10 +52,8 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>API FETCH TEST</h1>
-        {errorMsg !== null && <h3>{errorMsg}</h3>}
-      </header>
+
+      <HeaderBar />
 
       <BrowserRouter>
         <nav id="navbar">

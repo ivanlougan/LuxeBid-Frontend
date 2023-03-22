@@ -6,6 +6,13 @@ const Checkout = ({}) => {
     useEffect(() => {
 
     }, [])
+
+
+    return (
+        <div className="checkout-container">
+            <h1>THIS IS THE CKECKOUT PAGE</h1>
+        </div>
+    )
 };
 
 export default Checkout;

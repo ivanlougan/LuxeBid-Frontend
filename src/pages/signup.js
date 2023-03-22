@@ -6,6 +6,13 @@ const Signup = ({}) => {
     useEffect(() => {
 
     }, [])
+
+
+    return (
+        <div className="signup-container">
+            <h1>THIS IS THE SIGNUP PAGE</h1>
+        </div>
+    )
 };
 
 export default Signup;
