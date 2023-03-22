@@ -1,6 +1,12 @@
-
+import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import './App.css';
+
+// Pages
+import Home from "./pages/home";
+import Checkout from "./pages/checkout";
+import Profile from "./pages/profile";
+import Signup from "./pages/signup";
 
 // import { authentication } from './utils/games/getGames';
 
@@ -46,6 +52,22 @@ function App() {
         <h1>API FETCH TEST</h1>
         {errorMsg !== null && <h3>{errorMsg}</h3>}
       </header>
+
+      <BrowserRouter>
+        <nav id="navbar">
+          <Link to="/">Home</Link>
+          <Link to="/signup">Signup</Link>
+          <Link to="/checkout">Checkout</Link>
+          <Link to="/profile">Profile</Link>
+        </nav>
+
+        <Routes>
+          <Route path="/" element={<Home></Home>}></Route>
+          <Route path="signup" element={<Signup></Signup>}></Route>
+          <Route path="checkout" element={<Checkout></Checkout>}></Route>
+          <Route path="profile" element={<Profile></Profile>}></Route>
+        </Routes>
+      </BrowserRouter>
 
       <div>
         {gamesData.map((game, index) => {
