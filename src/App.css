@@ -1,3 +1,5 @@
+
+
 /* Universal styling for every page */
 
 * {
@@ -12,9 +14,11 @@ body {
 
 }
 
+
 .App {
   text-align: center;
 }
+
 
 #navbar {
   display: flex;
@@ -30,4 +34,8 @@ body {
   position: sticky;
   top: 0px;
 
+}
+
+.profileBox {
+  color: blueviolet;
 }
