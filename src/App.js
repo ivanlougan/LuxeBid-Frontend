@@ -10,6 +10,7 @@ import Signup from "./pages/signup";
 
 //Components
 import HeaderBar from "./components/header/Header"
+import FooterBar from './components/footer/Footer';
 
 // import { authentication } from './utils/games/getGames';
 
@@ -64,23 +65,14 @@ function App() {
         </nav>
 
         <Routes>
-          <Route path="/" element={<Home></Home>}></Route>
+          <Route path="/" element={<Home gamesData={gamesData}></Home>}></Route>
           <Route path="signup" element={<Signup></Signup>}></Route>
           <Route path="checkout" element={<Checkout></Checkout>}></Route>
           <Route path="profile" element={<Profile></Profile>}></Route>
         </Routes>
       </BrowserRouter>
 
-      <div>
-        {gamesData.map((game, index) => {
-          return (
-            <div key={index}>
-              <h3>{game.name}</h3>
-            </div>
-          )
-        })}
-      </div>
-
+        <FooterBar />
     </div>
   );
 };
