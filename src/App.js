@@ -18,7 +18,7 @@ function App() {
   useEffect(() => {
     const IGDBgames = async () => {
       try {
-          const response = await fetch("http://localhost/getGames", {
+          const response = await fetch( `${process.env.REACT_APP_DEPLOYED_URL}getGames`, {
               method: "POST",
               mode: "cors",
               headers: {
