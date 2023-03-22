@@ -43,7 +43,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>API FETCH TEST</h1>
+        <h1>LuxeBids</h1>
         {errorMsg !== null && <h3>{errorMsg}</h3>}
       </header>
 

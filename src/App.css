@@ -1,3 +1,14 @@
+body {
+  background-image: -moz-linear-gradient(rgb(255, 19, 247), blue);
+}
+
+
 .App {
   text-align: center;
 }
+
+.profileBox {
+  color: blueviolet;
+}
+
+
