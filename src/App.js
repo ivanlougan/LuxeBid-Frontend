@@ -8,12 +8,12 @@ function App() {
 
   // Global States
   const [gamesData, setGamesData] = useState([])
-  const [errorMsg, setErrorMsg] = useState(null)
-  const [user, setUser] = useState({
-    username: null,
-    email: null,
-    password: null
-  });
+  // const [errorMsg, setErrorMsg ] = useState(null)
+  // const [ user, setUser ] = useState({
+  //   username: null,
+  //   email: null,
+  //   password: null
+  // });
 
   useEffect(() => {
     const IGDBgames = async () => {
@@ -44,7 +44,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>API FETCH TEST</h1>
-        {errorMsg !== null && <h3>{errorMsg}</h3>}
+        {/* {errorMsg !== null && <h3>{errorMsg}</h3>} */}
       </header>
 
       <div>
