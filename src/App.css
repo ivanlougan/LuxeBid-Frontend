@@ -1,5 +1,3 @@
-
-
 /* Universal styling for every page */
 
 * {
@@ -11,32 +9,35 @@ body {
   background: no-repeat;
   background-color: #4158D0;
   background-image: linear-gradient(0deg, #4158D0 0%, #C850C0 46%, #ff7072 100%);
-
+  background-attachment: fixed;
 }
-
 
 .App {
   text-align: center;
 }
-
 
 #navbar {
   display: flex;
   flex-flow: row;
   align-items: center;
   justify-content: space-around;
-
-  font-size: 20px;
-
-  border: 2px solid rgb(0, 0, 0);
   
+  background: rgb(119, 93, 211);
+  font-size: 20px;
+  border: 2px solid rgb(0, 0, 0);
+  height: 30px;
+  background-color: #404db4;
+
 /* Optional: Have Navigation bar always be on top of the screen when scrolling down */
   position: sticky;
   top: 0px;
 
 }
 
-
+a {
+  text-decoration: none;
+  color: black;
+}
 
 
 

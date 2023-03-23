@@ -1,7 +1,7 @@
-// Only call on this function to generate an API authorization token
-export const authentication = async () => {
+// Only call on this function to generate an IGDB API authorization token
+export const authKeyGen = async () => {
     try {
-        const response = await fetch(`${process.env.AUTH}`, {
+        const response = await fetch(`${process.env.KEYGEN}`, {
             method: "POST",
             mode: "cors",
             headers: {
