@@ -1,16 +1,35 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { register } from "../utils/user/register";
 
 const Signup = ({}) => {
     //States?
+    const [ username, setUsername] = useState("");
+    const [ email, setEmail] = useState("");
+    const [ password, setPassword] = useState("");
 
-    useEffect(() => {
+    const submitHandler = async (e) => {
+        e.preventDefault();
+        console.log("handle submit")
 
-    }, [])
-
+        await register(username, email, password);
+    }
 
     return (
+        
         <div className="signup-container">
-            <h1>THIS IS THE SIGNUP PAGE</h1>
+            {/* container for image*/}
+            <div className="signup-image-container">
+            </div>
+            {/* container for form */}
+            <div className="signup-form-container">
+                <form onSubmit={submitHandler}>
+                    <input placeholder='username' onChange={(e) => setUsername(e.target.value)} />
+                    <input placeholder="email" onChange={(e) => setEmail(e.target.value)}/>
+                    <input placeholder="password" onChange={(e) => setPassword(e.target.value)}/>
+                    <button type='submit' >register</button>
+                </form>
+
+            </div>
         </div>
     )
 };
