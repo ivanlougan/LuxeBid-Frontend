@@ -1,4 +1,3 @@
-
 // import { profile } from "console";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -30,8 +29,6 @@ const Profile = (props) => {
             <button id="DeleteAccountButton">Delete Account</button>
         </div>
     )
-}
-
+};
 
 export default Profile;
-

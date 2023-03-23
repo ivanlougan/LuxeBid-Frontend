@@ -4,7 +4,7 @@ import "./home.css";
 // Components
 
 
-const Home = ({gamesData}) => {
+const Home = ({gamesData, basket}) => {
     //States?
 
     useEffect(() => {
@@ -15,11 +15,11 @@ const Home = ({gamesData}) => {
     return (
         <div className="home-container">
             <h1>THIS IS THE HOME PAGE</h1>
-
-            <div className="game-cards">
+            <h4>Total: £{basket}</h4>
+            <div className="game-cards-container">
                 {gamesData.map((game, index) => {
                     return (
-                    <div key={index}>
+                    <div className="game-cards" key={index}>
                         <h3>{game.name}</h3>
                     </div>
                     )
