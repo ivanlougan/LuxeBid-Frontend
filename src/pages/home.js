@@ -1,4 +1,8 @@
 import { useState, useEffect } from 'react';
+import "./home.css";
+
+// Components
+
 
 const Home = ({gamesData}) => {
     //States?
@@ -12,13 +16,16 @@ const Home = ({gamesData}) => {
         <div className="home-container">
             <h1>THIS IS THE HOME PAGE</h1>
 
-            {gamesData.map((game, index) => {
-                return (
-                <div key={index}>
-                    <h3>{game.name}</h3>
-                </div>
-                )
-            })}
+            <div className="game-cards">
+                {gamesData.map((game, index) => {
+                    return (
+                    <div key={index}>
+                        <h3>{game.name}</h3>
+                    </div>
+                    )
+            }   )}
+            </div>
+
         </div>
     )
 };

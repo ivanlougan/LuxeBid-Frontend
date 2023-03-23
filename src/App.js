@@ -12,12 +12,13 @@ import Signup from "./pages/signup";
 import HeaderBar from "./components/header/Header"
 import FooterBar from './components/footer/Footer';
 
-// import { authentication } from './utils/games/getGames';
+// import { authKeyGen } from './utils/games/getGames';
 
 function App() {
 
   // Global States
   const [gamesData, setGamesData] = useState([])
+  const [basket, setBasket] = useState([])
   const [errorMsg, setErrorMsg] = useState(null)
   const [signMsg, setSignMsg] = useState(null)
   const [user, setUser] = useState({
@@ -37,9 +38,7 @@ function App() {
               }
           });
           const data = await response.json();
-          // const gameInfo = data.map()
           setGamesData(data);
-          console.log("Test")
           console.log("IDGB get games response: ", data);
           // return data;
       } catch (error) {
@@ -48,8 +47,6 @@ function App() {
   };
   IGDBgames();
   }, [])
-
-  // Navbar + Router here?
 
   return (
     <div className="App">
@@ -67,7 +64,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home gamesData={gamesData}></Home>}></Route>
           <Route path="signup" element={<Signup></Signup>}></Route>
-          <Route path="checkout" element={<Checkout></Checkout>}></Route>
+          <Route path="checkout" element={<Checkout basket={basket}></Checkout>}></Route>
           <Route path="profile" element={<Profile></Profile>}></Route>
         </Routes>
       </BrowserRouter>
