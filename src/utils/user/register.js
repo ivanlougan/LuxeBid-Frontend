@@ -1,4 +1,4 @@
-const register = async (username, email, password) => {
+export const register = async (username, email, password) => {
     console.log(password)
     try {
         const response = await fetch("http://localhost/users/register", {
@@ -12,14 +12,11 @@ const register = async (username, email, password) => {
                 email: email,
                 password: password,
             }),
-    
-        })
+        });
         const data = await response.json();
-
-
+        console.log("Register response: ", data);
     } catch (error) {
         console.log(error)
         
     }
-    
-    };
+};

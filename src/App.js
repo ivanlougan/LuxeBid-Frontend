@@ -57,8 +57,8 @@ function App() {
       <BrowserRouter>
         <nav id="navbar">
           <Link to="/">Home</Link>
-          <Link to="/signup">Signup</Link>
           <Link to="/checkout">Checkout</Link>
+          <Link to="/signup">Signup</Link>
           <Link to="/profile">Profile</Link>
         </nav>
 

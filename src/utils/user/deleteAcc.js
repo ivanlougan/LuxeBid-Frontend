@@ -17,9 +17,8 @@ const deleteAcc = async (username, email) => {
         })
         const data = await response.json();
         data.user.token = jwtToken;
-
         return data;
     } catch (error) {
         console.log(error)
     }
-}
+};
