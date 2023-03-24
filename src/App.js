@@ -31,7 +31,7 @@ function App() {
     const IGDBgames = async () => {
       try {
           const response = await fetch(`${process.env.REACT_APP_DEV_URL}getGames`, {
-              method: "POST",
+              method: "GET",
               mode: "cors",
               headers: {
                   "Content-Type": "application/json",
@@ -39,7 +39,7 @@ function App() {
           });
           const data = await response.json();
           setGamesData(data);
-          console.log("IDGB get games response: ", data);
+          console.log("Get games response: ", data);
           // return data;
       } catch (error) {
           console.log(error);
