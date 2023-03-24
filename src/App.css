@@ -25,7 +25,7 @@ body {
   
   font-size: 20px;
   border: 2px solid rgb(0, 0, 0);
-  height: 30px;
+  height: 35px;
   background-color: #1e0552;
   background-image: linear-gradient(270deg, #381485 0%, #2f6296 67%);
 
@@ -54,13 +54,14 @@ a {
   margin-bottom: 60px;
   border-color: black;
   box-shadow: 0px 0px 11px 29px rgba(0,0,0,0.1);
-  background-image: -moz-radial-gradient(blue, rgb(255, 26, 228));
+  background-image: -moz-radial-gradient(rgb(46, 46, 138), rgb(103, 65, 146));
+  opacity: .9;
 }
 
 .Profilepic {
   display: flex;
-margin: 10px;
-height: 180px;
+  margin: 10px;
+  height: 180px;
 }
 
 #ProfilePicture {
@@ -108,12 +109,7 @@ height: 180px;
   background-color: #4158D0;
 }
 
-
-
 /* CheckoutPage */
-
-
-
 .checkoutBox {
 
   max-width: 900px;
@@ -126,12 +122,10 @@ height: 180px;
   margin-bottom: 60px;
   border-color: black;
   box-shadow: 0px 0px 11px 29px rgba(0,0,0,0.1);
-  background-image: -moz-radial-gradient(blue, rgb(255, 26, 228));
-
+  background-image: -moz-radial-gradient(rgb(46, 46, 138), rgb(103, 65, 146));
+  opacity: .9;
 
 }
-
-
 
 .ContactBoxes {
 

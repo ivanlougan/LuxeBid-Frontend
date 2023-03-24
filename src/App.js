@@ -40,9 +40,9 @@ function App() {
               }
           });
           const data = await response.json();
-          setGamesData(data);
-          console.log("Get games response: ", data);
-          // return data;
+          console.log("DATA: ", data.data)
+          setGamesData(data.data);
+          return data;
       } catch (error) {
           console.log(error);
       }
@@ -66,11 +66,11 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home 
-              gamesData={gamesData} 
-              basket={basket} 
+              gamesData={gamesData} setGamesData={setGamesData}
+              basket={basket} setBasket={setBasket} 
               errorMsg={errorMsg} setErrorMsg={setErrorMsg}
               pricesInfo={pricesInfo} setPricesInfo={setPricesInfo}></Home>}></Route>
-              
+
           <Route path="signup" element={<Signup user={user}></Signup>}></Route>
           <Route path="checkout" element={<Checkout basket={basket}></Checkout>}></Route>
           <Route path="profile" element={<Profile user={user}></Profile>}></Route>
