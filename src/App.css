@@ -1,5 +1,3 @@
-
-
 /* Universal styling for every page */
 
 * {
@@ -11,33 +9,41 @@ body {
   background: no-repeat;
   background-color: #4158D0;
   background-image: linear-gradient(0deg, #4158D0 0%, #C850C0 46%, #ff7072 100%);
-
+  background-attachment: fixed;
 }
-
 
 .App {
   text-align: center;
 }
-
 
 #navbar {
   display: flex;
   flex-flow: row;
   align-items: center;
   justify-content: space-around;
-
-  font-size: 20px;
-
-  border: 2px solid rgb(0, 0, 0);
   
+  background: rgb(119, 93, 211);
+  font-size: 20px;
+  border: 2px solid rgb(0, 0, 0);
+  height: 30px;
+  background-color: #404db4;
+
 /* Optional: Have Navigation bar always be on top of the screen when scrolling down */
   position: sticky;
   top: 0px;
 
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
 
 
+
+.game-cards {
+  margin: 40px;
+}
 
 
 /* Profile CSS */
@@ -109,4 +115,35 @@ height: 180px;
 
 
 
+/* CheckoutPage */
 
+
+
+.checkoutBox {
+
+  max-width: 900px;
+  height: 950px;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  margin-top: 50px;
+  margin-left: 490px;
+  margin-bottom: 60px;
+  border-color: black;
+  box-shadow: 0px 0px 11px 29px rgba(0,0,0,0.1);
+  background-image: -moz-radial-gradient(blue, rgb(255, 26, 228));
+
+
+}
+
+
+
+.ContactBoxes {
+
+display: flex;
+flex-direction: column;  
+width: 500px;
+padding: 50px;
+margin: 40px;
+
+}

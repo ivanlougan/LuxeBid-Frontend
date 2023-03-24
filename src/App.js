@@ -12,14 +12,15 @@ import Signup from "./pages/signup";
 import HeaderBar from "./components/header/Header"
 import FooterBar from './components/footer/Footer';
 
-// import { authentication } from './utils/games/getGames';
+// import { authKeyGen } from './utils/games/getGames';
 
 function App() {
 
   // Global States
   const [gamesData, setGamesData] = useState([])
-  const [errorMsg, setErrorMsg] = useState(null)
-  const [signMsg, setSignMsg] = useState(null)
+  const [basket, setBasket] = useState([0]) // Basket used by faker?
+  const [errorMsg, setErrorMsg] = useState("errorMsg state is working")
+  const [signMsg, setSignMsg] = useState("Sign message state is working")
   const [user, setUser] = useState({
     username: null,
     email: null,
@@ -37,9 +38,7 @@ function App() {
               }
           });
           const data = await response.json();
-          // const gameInfo = data.map()
           setGamesData(data);
-          console.log("Test")
           console.log("IDGB get games response: ", data);
           // return data;
       } catch (error) {
@@ -49,12 +48,11 @@ function App() {
   IGDBgames();
   }, [])
 
-  // Navbar + Router here?
-
+  // Passing the global states down to the components that require it
   return (
     <div className="App">
 
-      <HeaderBar />
+      <HeaderBar signMsg={signMsg} user={user}/>
 
       <BrowserRouter>
         <nav id="navbar">
@@ -65,10 +63,10 @@ function App() {
         </nav>
 
         <Routes>
-          <Route path="/" element={<Home gamesData={gamesData}></Home>}></Route>
-          <Route path="signup" element={<Signup></Signup>}></Route>
-          <Route path="checkout" element={<Checkout></Checkout>}></Route>
-          <Route path="profile" element={<Profile></Profile>}></Route>
+          <Route path="/" element={<Home gamesData={gamesData} basket={basket} errorMsg={errorMsg}></Home>}></Route>
+          <Route path="signup" element={<Signup user={user}></Signup>}></Route>
+          <Route path="checkout" element={<Checkout basket={basket}></Checkout>}></Route>
+          <Route path="profile" element={<Profile user={user}></Profile>}></Route>
         </Routes>
       </BrowserRouter>
 
