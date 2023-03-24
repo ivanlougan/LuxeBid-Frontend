@@ -17,13 +17,7 @@ const Home = ({gamesData, basket}) => {
             <h1>THIS IS THE HOME PAGE</h1>
             <h4>Total: £{basket}</h4>
             <div className="game-cards-container">
-                {gamesData.map((game, index) => {
-                    return (
-                    <div className="game-cards" key={index}>
-                        <h3>{game.name}</h3>
-                    </div>
-                    )
-            }   )}
+
             </div>
 
         </div>
@@ -31,3 +25,11 @@ const Home = ({gamesData, basket}) => {
 };
 
 export default Home;
+
+// {gamesData.map((game, index) => {
+//     return (
+//     <div className="game-cards" key={index}>
+//         {/* <h3>{game.name}</h3> */}
+//     </div>
+//     )
+// }   )}
