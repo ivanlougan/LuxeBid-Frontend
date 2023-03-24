@@ -28,6 +28,24 @@ const Home = ({
         fetchData();
     }, [])
 
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const gameInfo = []
+                for (let i = 0; i < 10; i++) {
+                    gameInfo.push({
+                        // company: faker.company.Name(),
+                        price: faker.commerce.price(10, 70),
+                    })
+                }
+                setPricesInfo(gameInfo)
+            } catch (error) {
+                setErrorMsg("Information unavailable")
+            }
+        }
+        fetchData();
+    }, [])
+
     return (
         <div className="home-container">
             <h1>THIS IS THE HOME PAGE</h1>
