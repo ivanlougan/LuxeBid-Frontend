@@ -12,6 +12,7 @@ const Signup = ({}) => {
         console.log("handle submit")
 
         await register(username, email, password);
+        e.target.reset();
     }
 
     return (
