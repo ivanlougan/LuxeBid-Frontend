@@ -1,7 +1,6 @@
 export const register = async (username, email, password) => {
-    console.log(password)
     try {
-        const response = await fetch("http://localhost/users/register", {
+        const response = await fetch("http://localhost/users/registeruser", {
             method: "POST",
             mode: "cors",
             headers: {
@@ -9,14 +8,13 @@ export const register = async (username, email, password) => {
             },
             body: JSON.stringify({
                 username: username,
-                email: email,
+                email: email,                
                 password: password,
             }),
         });
         const data = await response.json();
         console.log("Register response: ", data);
     } catch (error) {
-        console.log(error)
-        
+        console.log(error)        
     }
 };
