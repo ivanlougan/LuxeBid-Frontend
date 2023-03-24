@@ -1,7 +1,7 @@
 export const register = async (username, email, password) => {
     console.log(password)
     try {
-        const response = await fetch("http://localhost/users/register", {
+        const response = await fetch("http://localhost/users/registeruser", {
             method: "POST",
             mode: "cors",
             headers: {
