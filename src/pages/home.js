@@ -3,10 +3,10 @@ import { faker } from '@faker-js/faker';
 import "./home.css";
 
 // Components
-
+import { ProductCard } from '../components/productCard/ProductCard';
 
 const Home = ({ 
-    gamesData, basket, errorMsg, setErrorMsg, pricesInfo, setPricesInfo 
+    gamesData, setGamesData, basket, setBasket, pricesInfo, setPricesInfo 
 }) => {
     //States?
 
@@ -22,10 +22,11 @@ const Home = ({
                 }
                 setPricesInfo(gameInfo)
             } catch (error) {
-                setErrorMsg("Information unavailable")
+                // setErrorMsg("Information unavailable")
             }
         }
         fetchData();
+        console.log("Times faker is being called:")
     }, [])
 
     useEffect(() => {
@@ -47,20 +48,11 @@ const Home = ({
     }, [])
 
     return (
-        <div className="home-container">
-            <h1>THIS IS THE HOME PAGE</h1>
-            <h4>Total: £{basket}</h4>
-            <div className="game-cards-container">
-                {pricesInfo.map((info, index) => {
-                    return (
-                        <div className="game-cards" key={index}>
-                            <h3>{info.price}</h3>
-                        </div>
-                    )
-                }
-                )};
-            </div>
-        </div>
+        <ProductCard 
+            gamesData={gamesData} setGamesData={setGamesData}
+            basket={basket} setBasket={setBasket}
+            pricesInfo={pricesInfo} setPricesInfo={setPricesInfo}
+            />
     )
 };
 
