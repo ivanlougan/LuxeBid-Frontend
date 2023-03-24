@@ -25,7 +25,7 @@ body {
   
   font-size: 20px;
   border: 2px solid rgb(0, 0, 0);
-  height: 35px;
+  height: 30px;
   background-color: #1e0552;
   background-image: linear-gradient(270deg, #381485 0%, #2f6296 67%);
 
@@ -40,9 +40,7 @@ a {
   color: rgb(194, 194, 194);
 }
 
-
 /* Profile CSS */
-
 .profileBox {
   max-width: 900px;
   height: 950px;
@@ -54,14 +52,13 @@ a {
   margin-bottom: 60px;
   border-color: black;
   box-shadow: 0px 0px 11px 29px rgba(0,0,0,0.1);
-  background-image: -moz-radial-gradient(rgb(46, 46, 138), rgb(103, 65, 146));
-  opacity: .9;
+  background-image: -moz-radial-gradient(blue, rgb(255, 26, 228));
 }
 
 .Profilepic {
   display: flex;
-  margin: 10px;
-  height: 180px;
+margin: 10px;
+height: 180px;
 }
 
 #ProfilePicture {
@@ -80,7 +77,7 @@ a {
 
 
 #title {
-  color: #4158D0;
+  color: #ffffff;
 }
 
 .buttonLayout {
@@ -121,10 +118,19 @@ a {
   margin-left: 490px;
   margin-bottom: 60px;
   border-color: black;
-  box-shadow: 0px 0px 11px 29px rgba(0,0,0,0.1);
-  background-image: -moz-radial-gradient(rgb(46, 46, 138), rgb(103, 65, 146));
-  opacity: .9;
+  box-shadow: 0px 0px 29px 29px rgba(255, 0, 191, 0.5);
 
+}
+
+.detailBoxes {
+  width: 900px;
+  
+}
+
+.EmailBox {
+  box-shadow: 0px 0px 19px 19px rgba(255, 0, 191, 0.6);
+  height: 30px;
+  margin-top: 50px;
 }
 
 .ContactBoxes {
@@ -132,7 +138,30 @@ a {
 display: flex;
 flex-direction: column;  
 width: 500px;
-padding: 50px;
+padding: 30px;
 margin: 40px;
+margin-left: 150px;
+align-items: start;
 
+}
+
+#inputBox {
+
+margin: 20px;
+height: 30px;
+width: 200px;
+border-color: black;
+  box-shadow: 0px 0px 11px 9px rgba(255, 0, 191, 0.5);
+
+}
+
+.PayButton {
+
+  color: black;
+  width: 100px;
+  height: 50px;
+  border-radius: 10%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+  background-color: #4158D0;
 }
