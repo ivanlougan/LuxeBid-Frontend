@@ -18,6 +18,8 @@ function App() {
 
   // Global States
   const [gamesData, setGamesData] = useState([])
+  const [pricesInfo, setPricesInfo] = useState([]);
+
   const [basket, setBasket] = useState([0]) // Basket used by faker?
   const [errorMsg, setErrorMsg] = useState("errorMsg state is working")
   const [signMsg, setSignMsg] = useState("Sign message state is working")
@@ -63,7 +65,12 @@ function App() {
         </nav>
 
         <Routes>
-          <Route path="/" element={<Home gamesData={gamesData} basket={basket} errorMsg={errorMsg}></Home>}></Route>
+          <Route path="/" element={<Home 
+              gamesData={gamesData} 
+              basket={basket} 
+              errorMsg={errorMsg} setErrorMsg={setErrorMsg}
+              pricesInfo={pricesInfo} setPricesInfo={setPricesInfo}></Home>}></Route>
+              
           <Route path="signup" element={<Signup user={user}></Signup>}></Route>
           <Route path="checkout" element={<Checkout basket={basket}></Checkout>}></Route>
           <Route path="profile" element={<Profile user={user}></Profile>}></Route>

@@ -5,38 +5,27 @@ import "./home.css";
 // Components
 
 
-const Home = ({ gamesData, basket }) => {
+const Home = ({ 
+    gamesData, basket, errorMsg, setErrorMsg, pricesInfo, setPricesInfo 
+}) => {
     //States?
-
-    const [gameData, setGameData] = useState([]);
-    const [error, setError] = useState(null);
-    const [gameInfo, setGameInfo] = useState([]);
-    const [pricesData, setPriceInfo] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
-
             try {
-                setError(null);
-
                 const gameInfo = []
                 for (let i = 0; i < 10; i++) {
-
                     gameInfo.push({
-                        company: faker.company.Name(),
-                        finance: faker.finance.amount(),
-
+                        // company: faker.company.Name(),
+                        price: faker.commerce.price(10, 70),
                     })
                 }
-                setGameData(gameInfo)
-                console.log(gameData)
-
+                setPricesInfo(gameInfo)
             } catch (error) {
-                setError("Information unavailable")
+                setErrorMsg("Information unavailable")
             }
         }
         fetchData();
-
     }, [])
 
     return (
@@ -44,21 +33,17 @@ const Home = ({ gamesData, basket }) => {
             <h1>THIS IS THE HOME PAGE</h1>
             <h4>Total: £{basket}</h4>
             <div className="game-cards-container">
-
-                {gamesData.map((game, index) => {
+                {pricesInfo.map((info, index) => {
                     return (
                         <div className="game-cards" key={index}>
-                            <h3>{game.name}</h3>
+                            <h3>{info.price}</h3>
                         </div>
                     )
                 }
-                )}
-
-
+                )};
             </div>
         </div>
     )
 };
 
 export default Home;
-
