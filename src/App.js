@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { faker } from '@faker-js/faker';
 import './App.css';
 
 // Pages

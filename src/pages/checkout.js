@@ -18,7 +18,7 @@ const Checkout = ({basket}) => {
             </div>
 
            <div className='ContactBoxes'>
-            <h2 className='ContactBoxes'>Shipping Address</h2>
+           <h2 className='ContactBoxes'>Shipping Address</h2>
            <div className='NameBoxes'> <input id='inputBox' placeholder='First name'></input>
            <input id='inputBox' placeholder='Last name'></input></div>
            <input id='inputBox' placeholder='Address name'></input>
