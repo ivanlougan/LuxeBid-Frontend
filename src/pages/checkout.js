@@ -14,20 +14,21 @@ const Checkout = ({basket}) => {
            <div className='checkoutBox'>
 
             <h2>Contact Information</h2>
-            <div className='detailBoxes'><input placeholder='Email'></input>
+            <div className='detailBoxes'><input className='EmailBox' placeholder='Email'></input>
             </div>
 
            <div className='ContactBoxes'>
-            <input id='inputBox' placeholder='First name'></input>
-           <input id='inputBox' placeholder='Last name'></input>
-           <input placeholder='Address name'></input>
-           <input placeholder='Post code'></input>
+            <h2 className='ContactBoxes'>Shipping Address</h2>
+           <div className='NameBoxes'> <input id='inputBox' placeholder='First name'></input>
+           <input id='inputBox' placeholder='Last name'></input></div>
+           <input id='inputBox' placeholder='Address name'></input>
+           <input id='inputBox' placeholder='Post code'></input>
            
            </div>
 
             <h2>Pay below</h2>
             <h4>Total: £{basket}</h4>
-            <div><button>Pay now</button></div>
+            <div><button className='PayButton'>Pay now</button></div>
             </div>
 
 
