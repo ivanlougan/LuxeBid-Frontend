@@ -16,4 +16,4 @@ const editAcc = async (username, email, password) => {
     } catch (error) {
         console.log(error)
     }
-}
+};
