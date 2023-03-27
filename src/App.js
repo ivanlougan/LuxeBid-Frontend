@@ -22,12 +22,13 @@ function App() {
   const [basket, setBasket] = useState([0]); // Basket used by faker?
   const [errorMsg, setErrorMsg] = useState("errorMsg state is working");
   const [signMsg, setSignMsg] = useState("DEFAULT USER");
+  const [watchlist, setWatchList] = useState([])
   const [user, setUser] = useState({
     username: null,
     email: null,
     password: null
   });
-
+  
   useEffect(() => {
     const IGDBgames = async () => {
       try {
@@ -71,7 +72,7 @@ function App() {
 
           <Route path="signup" element={<Signup user={user} setUser={setUser}></Signup>}></Route>
           <Route path="checkout" element={<Checkout basket={basket}></Checkout>}></Route>
-          <Route path="profile" element={<Profile user={user}></Profile>}></Route>
+          <Route path="profile" element={<Profile user={user} watchlist={watchlist} setWatchList={setWatchList} gamesData={gamesData} setGamesData={setGamesData}></Profile>}></Route>
         </Routes>
         
 
