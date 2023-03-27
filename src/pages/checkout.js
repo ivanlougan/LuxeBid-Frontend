@@ -26,11 +26,13 @@ const Checkout = ({basket}) => {
               <input id='inputBox' placeholder='Address name'></input>
               <input id='inputBox' placeholder='Post code'></input>
            </div>
+           
 
               <h2>Pay below</h2>
               <h4>Total: £{basket}</h4>
               <div><button className='PayButton'>Pay now</button></div>
            </div>
+           
       </div>
     )}
 export default Checkout;
