@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import { register } from "../utils/user/register";
+import pic from "../images/signuppic.png";
+import "../pages/signup.css";
+
 
 const Signup = ({}) => {
     //States?
@@ -12,6 +15,7 @@ const Signup = ({}) => {
         console.log("handle submit")
 
         await register(username, email, password);
+        e.target.reset();
     }
 
     return (
@@ -19,14 +23,16 @@ const Signup = ({}) => {
         <div className="signup-container">
             {/* container for image*/}
             <div className="signup-image-container">
+            <img id="picture" src={pic} alt="image" />
             </div>
             {/* container for form */}
             <div className="signup-form-container">
-                <form onSubmit={submitHandler}>
-                    <input placeholder='username' onChange={(e) => setUsername(e.target.value)} />
-                    <input placeholder="email" onChange={(e) => setEmail(e.target.value)}/>
-                    <input placeholder="password" onChange={(e) => setPassword(e.target.value)}/>
-                    <button type='submit' >register</button>
+                <h2> Please provide your details </h2>
+                <form onSubmit={submitHandler} >
+                    <input className="input-container" placeholder='username' onChange={(e) => setUsername(e.target.value)} />
+                    <input className="input-container" placeholder="email" onChange={(e) => setEmail(e.target.value)}/>
+                    <input className="input-container" placeholder="password" onChange={(e) => setPassword(e.target.value)}/>
+                    <button className='register-button' type='submit' > REGISTER BRO </button>
                 </form>
 
             </div>
