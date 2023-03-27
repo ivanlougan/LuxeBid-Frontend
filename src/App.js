@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { faker } from '@faker-js/faker';
 import './App.css';
 
 // Page components
@@ -31,7 +32,7 @@ function App() {
     const IGDBgames = async () => {
       try {
           const response = await fetch(`${process.env.REACT_APP_DEV_URL}getGames`, {
-              method: "GET",
+              method: "POST",
               mode: "cors",
               headers: {
                   "Content-Type": "application/json",
