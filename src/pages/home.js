@@ -10,43 +10,6 @@ const Home = ({
 }) => {
     //States?
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const gameInfo = []
-                for (let i = 0; i < 10; i++) {
-                    gameInfo.push({
-                        // company: faker.company.Name(),
-                        price: faker.commerce.price(10, 70),
-                    })
-                }
-                setPricesInfo(gameInfo)
-            } catch (error) {
-                // setErrorMsg("Information unavailable")
-            }
-        }
-        fetchData();
-        console.log("Times faker is being called:")
-    }, [])
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const gameInfo = []
-                for (let i = 0; i < 10; i++) {
-                    gameInfo.push({
-                        // company: faker.company.Name(),
-                        price: faker.commerce.price(10, 70),
-                    })
-                }
-                setPricesInfo(gameInfo)
-            } catch (error) {
-                setErrorMsg("Information unavailable")
-            }
-        }
-        fetchData();
-    }, [])
-
     return (
         <ProductCard 
             gamesData={gamesData} setGamesData={setGamesData}

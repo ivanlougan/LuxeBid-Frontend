@@ -20,27 +20,33 @@ function App() {
   const [pricesInfo, setPricesInfo] = useState([]);
 
   const [basket, setBasket] = useState([0]); // Basket used by faker?
-  const [errorMsg, setErrorMsg] = useState("errorMsg state is working");
-  const [signMsg, setSignMsg] = useState("DEFAULT USER");
-  const [user, setUser] = useState({
-    username: null,
-    email: null,
-    password: null
-  });
+  const [errorMsg, setErrorMsg] = useState("");
+  const [signMsg, setSignMsg] = useState("");
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     const IGDBgames = async () => {
       try {
           const response = await fetch(`${process.env.REACT_APP_DEV_URL}getGames`, {
-              method: "POST",
+              method: "GET",
               mode: "cors",
               headers: {
                   "Content-Type": "application/json",
               }
-          });
+          })
+          if(!response.ok) {
+            setErrorMsg("Error: cannot fetch data from API")
+          }
           const data = await response.json();
-          console.log("DATA: ", data.data)
+          // const newData = data.map((newObject) => {
+          //   return({
+          //     name: newData.data.name,
+          //     img: newData.data.thumb_url,
+          //     price: faker.commerce.price(10, 70)
+          //   })
+          // })
           setGamesData(data.data);
+          console.log("gamesData state: ", data.data)
           return data;
       } catch (error) {
           console.log(error);
@@ -48,6 +54,25 @@ function App() {
   };
   IGDBgames();
   }, []);
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //       try {
+  //           const gameInfo = []
+  //           for (let i = 0; i < 10; i++) {
+  //               gameInfo.push({
+  //                   price: faker.commerce.price(10, 70),
+  //               })
+  //           }
+  //           setPricesInfo(gameInfo)
+  //           console.log("pricesInfo state: ", gameInfo)
+  //       } catch (error) {
+  //         console.log(error)
+  //           setErrorMsg("Information unavailable")
+  //       }
+  // };
+  // fetchData();
+  // }, []);
 
   // Passing the global states down to the components that require it
   return (
@@ -65,10 +90,10 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home 
-              gamesData={gamesData} setGamesData={setGamesData}
+              gamesData={gamesData} 
               basket={basket} setBasket={setBasket} 
               errorMsg={errorMsg} setErrorMsg={setErrorMsg}
-              pricesInfo={pricesInfo} setPricesInfo={setPricesInfo}></Home>}></Route>
+              pricesInfo={pricesInfo} ></Home>}></Route>
 
           <Route path="signup" element={<Signup user={user} setUser={setUser}></Signup>}></Route>
           <Route path="checkout" element={<Checkout basket={basket}></Checkout>}></Route>
