@@ -8,6 +8,8 @@ const Checkout = ({basket}) => {
 
     }, [])
 
+   
+
 
     return (
         <div className="checkout-container">
@@ -29,5 +31,6 @@ const Checkout = ({basket}) => {
               <h4>Total: £{basket}</h4>
               <div><button className='PayButton'>Pay now</button></div>
            </div>
-
+      </div>
+    )}
 export default Checkout;
