@@ -1,16 +1,37 @@
 import React from "react";
+import { useState } from "react";
 import "./header.css";
-import LuxeLogo from "../../images/logo.png"
+import LuxeLogo from "../../images/LUXElogo2.png"
+import { loginUser } from "../../utils/user/login";
 
-const HeaderBar = ({errorMsg, signMsg}) => {
+const HeaderBar = ({signMsg, user, setUser}) => {
 
+    const [username, setUsername] = useState();
+    const [password, setPassword] = useState();
+
+    const loginSubmit = async (e) => {
+        e.preventDefault();
+        console.log(username, password)
+        try {
+            await loginUser(username, password);
+            if (userData.message === "success") {
+                setUser(userData.user);
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    };
 
     return (
         <header className="App-header">
-            <h4>SignMsg: {signMsg}</h4>
-            <h3>LUXE GAMING HEADER TITLE HERE?</h3>
+
+            <form onSubmit={loginSubmit}>
+                    <input placeholder="Username" onChange={(e) => setUsername(e.target.value)} />
+                    <input placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
+                    <button type="submit">Login</button>
+            </form>
+            <h4>Welcome, {signMsg}</h4>
             <img id="logo" src={LuxeLogo} alt="logo"></img>
-            {errorMsg !== null && <h3>{errorMsg}</h3>}
       </header>
     )
 };
