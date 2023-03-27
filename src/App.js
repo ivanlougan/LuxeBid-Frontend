@@ -54,9 +54,8 @@ function App() {
   return (
     <div className="App">
 
-      <HeaderBar signMsg={signMsg} user={user}/>
+      {/* <HeaderBar signMsg={signMsg} user={user}/> */}
 
-      <BrowserRouter>
         <nav id="navbar">
             <Link to="/">Home</Link>
             <Link to="/checkout">Checkout</Link>
@@ -75,9 +74,9 @@ function App() {
           <Route path="checkout" element={<Checkout basket={basket}></Checkout>}></Route>
           <Route path="profile" element={<Profile user={user} watchlist={watchlist} setWatchList={setWatchList} gamesData={gamesData} setGamesData={setGamesData}></Profile>}></Route>
         </Routes>
-      </BrowserRouter>
+        
 
-        <FooterBar />
+       
 
     </div>
   );
