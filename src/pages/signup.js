@@ -26,7 +26,7 @@ const Signup = ({}) => {
                     <input placeholder='username' onChange={(e) => setUsername(e.target.value)} />
                     <input placeholder="email" onChange={(e) => setEmail(e.target.value)}/>
                     <input placeholder="password" onChange={(e) => setPassword(e.target.value)}/>
-                    <button type='submit' >register</button>
+                    <button type='submit' >Register</button>
                 </form>
 
             </div>

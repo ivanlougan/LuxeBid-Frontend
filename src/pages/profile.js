@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Icon from "../images/user-icon-jpg-18.jpg"
-import '../App.css';
+import "./profile.css";
 
 
 const Profile = (props) => {

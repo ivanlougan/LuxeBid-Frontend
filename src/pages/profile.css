@@ -1,0 +1,67 @@
+.profileBox {
+    max-width: 900px;
+    height: 650px;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    margin-top: 50px;
+    margin-left: 490px;
+    margin-bottom: 60px;
+    border-color: black;
+    box-shadow: 0px 0px 29px 15px rgba(255, 0, 191, 0.5);
+    border-radius: 10px;
+
+}
+  
+.Profilepic {
+    display: flex;
+    margin: 10px;
+    height: 180px;
+}
+  
+#ProfilePicture {
+    display: flex;
+    width: 180px;
+    height: 180px;
+    margin-left: 40px;
+    margin-top: 30px;
+    border-radius: 100px;
+    
+}
+  
+#Userinformation {
+    margin-left: 50px;
+
+}
+  
+#title {
+    color: #ffffff;
+
+}
+  
+.buttonLayout {
+    margin-left: 290px;
+
+}
+  
+#EditButton {
+    width: 90px;
+    height: 50px;
+    border-radius: 10%;
+    background-color: #4158D0;
+  
+}
+  
+.WatchTitle {
+    margin-bottom: 280px;
+
+}
+  
+#DeleteAccountButton {
+    margin-bottom: 20px;
+    width: 100px;
+    height: 50px;
+    border-radius: 10%;
+    background-color: #4158D0;
+
+}
