@@ -34,8 +34,5 @@ const Checkout = ({basket}) => {
            </div>           
       </div>
     )}
-           </div></div>
            
-           )
-    }
 export default Checkout;
