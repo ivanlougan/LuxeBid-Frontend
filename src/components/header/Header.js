@@ -12,8 +12,15 @@ const HeaderBar = ({signMsg, user, setUser}) => {
     const loginSubmit = async (e) => {
         e.preventDefault();
         console.log(username, password)
-        await loginUser(username, password);
-    }
+        try {
+            await loginUser(username, password);
+            if (userData.message === "success") {
+                setUser(userData.user);
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    };
 
     return (
         <header className="App-header">
