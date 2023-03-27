@@ -1,5 +1,6 @@
 .signup-container {
     margin: 50px;
+    height: 100%;
     display: flex;
     justify-content: space-evenly;
 
@@ -7,11 +8,13 @@
 
 .signup-image-container {
     width: 400px;
+    height: 50%;
     box-shadow: 0px 0px 19px 25px rgba(255, 0, 191, 0.5);
 }
 
 .signup-form-container {
     width: 500px;
+    height: 50%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
