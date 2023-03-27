@@ -1,0 +1,29 @@
+import { useState, useEffect } from 'react';
+import { faker } from '@faker-js/faker';
+
+export const ProductCard = ({
+    gamesData, setGamesData, basket, pricesInfo, setPricesInfo
+}) => {
+    // ???
+    return (
+        <div className="home-container">
+                <h1>THIS IS THE HOME PAGE</h1>
+                <h4>Total: £{basket}</h4>
+            <div className="game-cards-container">
+                {gamesData.map((game, index) => {
+                return (
+                    <div className="game-cards" key={index}>
+                        <h3>{game.name}</h3>
+                        <img src={game.image.thumb_url}></img>
+                    </div>
+                )
+            }
+            )};
+        </div>
+    </div>
+    )
+};
+
+// For the images, the API fetches a few in an array. 
+// To access specific ones, use the <image> then dot notation. For tags inside,
+// check the console

@@ -1,37 +1,22 @@
-import { useState } from "react";
+import { writeCookie, getTokenFromCookie } from "../../common"
 
-const Login = ({user, setUser}) => { 
-    const [username, setUsername] = useState();
-    const [password, setPassword] = useState();
-
-    const submitHandler = async (e, setUser) => {
-        e.preventDefault();
-        console.log("login button clicked");
-        try {
-            const userData = await login(e, username, password);
-    
-            if (userData.message === "success") {
-                setUser(userData.user);
-            }
-        } catch (error){
-            console.log("error")
-        }
-    };
-
-return (
-    <div className="Login-Container">
-        <form onSubmit={(e) => submitHandler(e, setUser)} > 
-            <input
-            placeholder="username"
-            onChange={(e) => setUsername(e.target.value)}
-/>
-            <input
-            placeholder="password"
-            onChange={(e) => setPassword(e.target.value)}
-            />
-        </form> 
-    </div>
-    );
+export const loginUser = async (username, password, setUser) => {
+    try {
+        const response = await fetch("http://localhost/users/login", {
+            method: "POST",
+            mode: "cors",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                username: username,
+                password: password
+            }),
+        });
+        const data = await response.json()
+        setUser(data.user);
+        writeCookie("jwt_token", data.user.token, 7)
+    } catch (error) {
+        console.log(error)
+    }
 };
-
-export default Login;
