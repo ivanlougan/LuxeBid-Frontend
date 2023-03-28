@@ -21,10 +21,11 @@ const HeaderBar = ({signMsg, userData, setUser}) => {
 
     return (
         <header className="App-header">
-            <form onSubmit={loginSubmit}>
-                <input placeholder="Username" onChange={(e) => setUsername(e.target.value)} />
-                <input placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
-                <button type="submit">Login</button>
+            <form className="login" onSubmit={loginSubmit}>
+                <h2 className="login-title" > Login </h2>
+                <input className="login-container" placeholder="Username" onChange={(e) => setUsername(e.target.value)} />
+                <input className="login-container" placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
+                <button className='register-button' type="submit"> Login </button>
             </form>
             <h4>{signMsg}</h4>
             <img id="logo" src={LuxeLogo} alt="logo"></img>

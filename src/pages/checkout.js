@@ -11,7 +11,7 @@ const Checkout = ({basket}) => {
 
     return (
         <div className="checkout-container">
-            <h1 id='title'>Your Items</h1>
+            {/* <h1 id='title'>Your Items</h1> */}
           <div className='checkoutBox'>
             <h2>Contact Information</h2>
               <div className='detailBoxes'><input className='EmailBox' placeholder='Email'></input>
