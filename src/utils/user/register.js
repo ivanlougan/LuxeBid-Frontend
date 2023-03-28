@@ -1,6 +1,6 @@
 export const register = async (username, email, password) => {
     try {
-        const response = await fetch("http://localhost/users/registeruser", {
+        const response = await fetch(`${process.env.REACT_APP_BASE_URL}users/registeruser`, {
             method: "POST",
             mode: "cors",
             headers: {
