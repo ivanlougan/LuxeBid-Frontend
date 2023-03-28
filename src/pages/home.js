@@ -6,7 +6,7 @@ import "./home.css";
 import { ProductCard } from '../components/productCard/ProductCard';
 
 const Home = ({
-  <div>
+  
     gamesData, setGamesData, basket, setBasket, pricesInfo, setPricesInfo, setErrorMsg, Games, GameList, Watchlist, setWatchList
 }) => {
 

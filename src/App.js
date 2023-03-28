@@ -100,10 +100,10 @@ function App() {
   return (
     <div className="App">
 
-      <HeaderBar 
+      {/* <HeaderBar 
         signMsg={signMsg} setSignMsg={setSignMsg} 
-        user={user} setUser={setUser}/>
-      />
+        user={user} setUser={setUser}/> */}
+      
         <nav id="navbar">
           <Link to="/">Home</Link>
           <Link to="/checkout">Checkout</Link>
@@ -123,7 +123,7 @@ function App() {
           <Route path="profile" element={<Profile user={user} watchlist={watchlist} setWatchList={setWatchList} gamesData={gamesData} setGamesData={setGamesData}></Profile>}></Route>
         </Routes>
         
-      <FooterBar />
+      {/* <FooterBar /> */}
 
     </div>
   );
