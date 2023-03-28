@@ -6,49 +6,9 @@ import "./home.css";
 import { ProductCard } from '../components/productCard/ProductCard';
 
 const Home = ({
+  <div>
     gamesData, setGamesData, basket, setBasket, pricesInfo, setPricesInfo, setErrorMsg, Games, GameList, Watchlist, setWatchList
 }) => {
-    //States?
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const gameInfo = []
-                for (let i = 0; i < 10; i++) {
-                    gameInfo.push({
-                        // company: faker.company.Name(),
-                        price: faker.commerce.price(10, 70),
-                    })
-                }
-                setPricesInfo(gameInfo)
-            } catch (error) {
-                // setErrorMsg("Information unavailable")
-            }
-        }
-        fetchData();
-        console.log("Times faker is being called:")
-    }, [])
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const gameInfo = []
-                for (let i = 0; i < 10; i++) {
-                    gameInfo.push({
-                        // company: faker.company.Name(),
-                        price: faker.commerce.price(10, 70),
-                    })
-                }
-                setPricesInfo(gameInfo)
-            } catch (error) {
-                setErrorMsg("Information unavailable")
-            }
-        }
-        fetchData();
-    }, [])
-
-
-    // add to watch list
 
     const AddWatchList = (index) => {
         let storedGames = [...Games]
@@ -56,26 +16,20 @@ const Home = ({
         GameCopy.push(storedGames.splice(index, 1)[0]);
         GameList(storedGames);
         setWatchList(GameCopy);
-        return (
-            <button onClick={() => AddWatchList}>Add to watch list</button>
+         return (
+           <button onClick={() => AddWatchList}>Add to watch list</button>
         )
-
     }
 
-
-
-
     return (
+        <div className="gameCard">
         <ProductCard
             gamesData={gamesData} setGamesData={setGamesData}
             basket={basket} setBasket={setBasket}
             pricesInfo={pricesInfo} setPricesInfo={setPricesInfo}
         />
+        </div>
     )
 };
-
-
-
-
 
 export default Home;
