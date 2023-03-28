@@ -52,6 +52,7 @@ function App() {
         setGamesData(data.data);
         console.log("gamesData state: ", data.data)
         return data;
+        
       } catch (error) {
         console.log(error);
       }
