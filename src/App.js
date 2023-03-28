@@ -40,8 +40,8 @@ function App() {
               }
           });
           const data = await response.json();
-          console.log("DATA: ", data.data)
-          setGamesData(data.data);
+          console.log("DATA: ", data)
+          setGamesData(data);
           return data;
       } catch (error) {
           console.log(error);
