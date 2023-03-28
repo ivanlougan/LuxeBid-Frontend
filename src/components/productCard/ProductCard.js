@@ -1,10 +1,12 @@
-import { useState, useEffect } from 'react';
-import { faker } from '@faker-js/faker';
+// import { useState, useEffect } from 'react';
+// import { faker } from '@faker-js/faker';
+import { AddWatchList } from '../../utils/games/addGame';
 
 export const ProductCard = ({
     gamesData, basket, pricesInfo,
 }) => {
     // ???
+    
     return (
         <div className="home-container">
                 <h1>THIS IS THE HOME PAGE</h1>
@@ -16,14 +18,19 @@ export const ProductCard = ({
                         <h3>{game.name}</h3>
                         <img src={game.image.thumb_url}></img>
                         <h4>£: {}</h4>
-                    </div>
+                        <button onClick={() => AddWatchList}>Add to watch List</button> 
+                    </div> 
                     )
                 }
             )};
             </div>
         </div>
     )
+    
 };
+
+
+
 
 // For the images, the API fetches a few in an array. 
 // To access specific ones, use the <image> then dot notation. For tags inside,

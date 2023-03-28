@@ -1,6 +1,6 @@
 .profileBox {
     max-width: 900px;
-    height: 650px;
+    height: 850px;
     width: 100%;
     padding: 20px;
     display: grid;
@@ -49,6 +49,7 @@
     height: 50px;
     border-radius: 10%;
     background-color: #4158D0;
+    margin: 10px;
   
 }
   

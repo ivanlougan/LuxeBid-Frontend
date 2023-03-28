@@ -13,7 +13,7 @@ const HeaderBar = ({signMsg, userData, setUser}) => {
         e.preventDefault();
         console.log(username, password)
         try {
-            await loginUser(username, password);
+            await loginUser(username, password, setUser);
         } catch (error) {
             console.log(error)
         }
@@ -21,7 +21,6 @@ const HeaderBar = ({signMsg, userData, setUser}) => {
 
     return (
         <header className="App-header">
-
             <form onSubmit={loginSubmit}>
                 <input placeholder="Username" onChange={(e) => setUsername(e.target.value)} />
                 <input placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
@@ -29,7 +28,7 @@ const HeaderBar = ({signMsg, userData, setUser}) => {
             </form>
             <h4>{signMsg}</h4>
             <img id="logo" src={LuxeLogo} alt="logo"></img>
-      </header>
+        </header>
     )
 };
 
