@@ -13,13 +13,17 @@ import Signup from "./pages/signup";
 import HeaderBar from "./components/header/Header";
 import FooterBar from './components/footer/Footer';
 
+// Functions
+import { getTokenFromCookie } from './common';
+import { authCheck } from './utils/user/authCheck';
+
 function App() {
 
   // Global States
   const [gamesData, setGamesData] = useState([]);
   const [pricesInfo, setPricesInfo] = useState([]);
 
-  const [basket, setBasket] = useState([0]); // Basket used by faker?
+  const [basket, setBasket] = useState([0]);
   const [errorMsg, setErrorMsg] = useState("");
   const [signMsg, setSignMsg] = useState("");
   const [user, setUser] = useState(null);
@@ -27,33 +31,51 @@ function App() {
   useEffect(() => {
     const IGDBgames = async () => {
       try {
-          const response = await fetch(`${process.env.REACT_APP_DEV_URL}getGames`, {
-              method: "GET",
-              mode: "cors",
-              headers: {
-                  "Content-Type": "application/json",
-              }
-          })
-          if(!response.ok) {
-            setErrorMsg("Error: cannot fetch data from API")
+        const response = await fetch(`${process.env.REACT_APP_DEV_URL}getGames`, {
+          method: "GET",
+          mode: "cors",
+          headers: {
+            "Content-Type": "application/json",
           }
-          const data = await response.json();
-          // const newData = data.map((newObject) => {
-          //   return({
-          //     name: newData.data.name,
-          //     img: newData.data.thumb_url,
-          //     price: faker.commerce.price(10, 70)
-          //   })
-          // })
-          setGamesData(data.data);
-          console.log("gamesData state: ", data.data)
-          return data;
+        })
+        if (!response.ok) {
+          setErrorMsg("Error: cannot fetch data from API")
+        }
+        const data = await response.json();
+        // const newData = data.map((newObject) => {
+        //   return({
+        //     name: newData.data.name,
+        //     img: newData.data.thumb_url,
+        //     price: faker.commerce.price(10, 70)
+        //   })
+        // })
+        setGamesData(data.data);
+        console.log("gamesData state: ", data.data)
+        return data;
       } catch (error) {
-          console.log(error);
+        console.log(error);
       }
-  };
-  IGDBgames();
+    };
+    IGDBgames();
   }, []);
+
+  useEffect(() => {
+    if (document.cookie) {
+      let token = getTokenFromCookie("jwt_token");
+      if (token === false) {
+        setUser(null)
+      } else {
+        loginWithToken(token)
+      }
+    }
+  }, []);
+
+  const loginWithToken = async (token) => {
+    const persistantUser = await authCheck(token);
+
+    await setUser(persistantUser.user);
+    // await setBasket()
+  };
 
   // useEffect(() => {
   //   const fetchData = async () => {
@@ -78,22 +100,24 @@ function App() {
   return (
     <div className="App">
 
-      <HeaderBar signMsg={signMsg} user={user}/>
+      <HeaderBar 
+        signMsg={signMsg} setSignMsg={setSignMsg} 
+        user={user} setUser={setUser}/>
 
       <BrowserRouter>
         <nav id="navbar">
-            <Link to="/">Home</Link>
-            <Link to="/checkout">Checkout</Link>
-            <Link to="/signup">Signup</Link>
-            <Link to="/profile">Profile</Link>
+          <Link to="/">Home</Link>
+          <Link to="/checkout">Checkout</Link>
+          <Link to="/signup">Signup</Link>
+          <Link to="/profile">Profile</Link>
         </nav>
 
         <Routes>
-          <Route path="/" element={<Home 
-              gamesData={gamesData} 
-              basket={basket} setBasket={setBasket} 
-              errorMsg={errorMsg} setErrorMsg={setErrorMsg}
-              pricesInfo={pricesInfo} ></Home>}></Route>
+          <Route path="/" element={<Home
+            gamesData={gamesData}
+            basket={basket} setBasket={setBasket}
+            errorMsg={errorMsg} setErrorMsg={setErrorMsg}
+            pricesInfo={pricesInfo} ></Home>}></Route>
 
           <Route path="signup" element={<Signup user={user} setUser={setUser}></Signup>}></Route>
           <Route path="checkout" element={<Checkout basket={basket}></Checkout>}></Route>
@@ -101,7 +125,7 @@ function App() {
         </Routes>
       </BrowserRouter>
 
-        <FooterBar />
+      <FooterBar />
 
     </div>
   );
