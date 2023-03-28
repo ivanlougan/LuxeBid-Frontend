@@ -6,7 +6,6 @@ import "./home.css";
 import { ProductCard } from '../components/productCard/ProductCard';
 
 const Home = ({
-  <div>
     gamesData, setGamesData, basket, setBasket, pricesInfo, setPricesInfo, setErrorMsg, Games, GameList, Watchlist, setWatchList
 }) => {
 
@@ -23,11 +22,11 @@ const Home = ({
 
     return (
         <div className="gameCard">
-        <ProductCard
-            gamesData={gamesData} setGamesData={setGamesData}
-            basket={basket} setBasket={setBasket}
-            pricesInfo={pricesInfo} setPricesInfo={setPricesInfo}
-        />
+            <ProductCard
+                gamesData={gamesData} setGamesData={setGamesData}
+                basket={basket} setBasket={setBasket}
+                pricesInfo={pricesInfo} setPricesInfo={setPricesInfo}
+            />
         </div>
     )
 };

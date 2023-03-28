@@ -103,7 +103,7 @@ function App() {
       <HeaderBar 
         signMsg={signMsg} setSignMsg={setSignMsg} 
         user={user} setUser={setUser}/>
-      />
+        
         <nav id="navbar">
           <Link to="/">Home</Link>
           <Link to="/checkout">Checkout</Link>
