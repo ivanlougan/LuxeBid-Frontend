@@ -14,9 +14,6 @@ const HeaderBar = ({signMsg, userData, setUser}) => {
         console.log(username, password)
         try {
             await loginUser(username, password);
-            if (userData.message === "success") {
-                setUser(userData.user);
-            }
         } catch (error) {
             console.log(error)
         }
@@ -26,11 +23,11 @@ const HeaderBar = ({signMsg, userData, setUser}) => {
         <header className="App-header">
 
             <form onSubmit={loginSubmit}>
-                    <input placeholder="Username" onChange={(e) => setUsername(e.target.value)} />
-                    <input placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
-                    <button type="submit">Login</button>
+                <input placeholder="Username" onChange={(e) => setUsername(e.target.value)} />
+                <input placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
+                <button type="submit">Login</button>
             </form>
-            <h4>Welcome, {signMsg}</h4>
+            <h4>{signMsg}</h4>
             <img id="logo" src={LuxeLogo} alt="logo"></img>
       </header>
     )
