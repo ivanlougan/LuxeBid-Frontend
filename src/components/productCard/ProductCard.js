@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { faker } from '@faker-js/faker';
 
 export const ProductCard = ({
-    gamesData, setGamesData, basket, pricesInfo, setPricesInfo
+    gamesData, basket, pricesInfo,
 }) => {
     // ???
     return (
@@ -15,12 +15,13 @@ export const ProductCard = ({
                     <div className="game-cards" key={index}>
                         <h3>{game.name}</h3>
                         <img src={game.image.thumb_url}></img>
+                        <h4>£: {}</h4>
                     </div>
-                )
-            }
+                    )
+                }
             )};
+            </div>
         </div>
-    </div>
     )
 };
 

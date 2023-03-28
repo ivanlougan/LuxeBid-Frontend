@@ -6,7 +6,7 @@ import Icon from "../images/user-icon-jpg-18.jpg"
 import "./profile.css";
 
 
-const Profile = (Games, GameList, watchlist, setWatchList) => {
+const Profile = ({Games, GameList, watchlist, setWatchList, gamesData}) => {
 
     // WatchList functionality
 
@@ -37,7 +37,7 @@ const Profile = (Games, GameList, watchlist, setWatchList) => {
                 </div>
                 <div> <h2 className="WatchTitle">Watch List</h2>
                 
-                {Games.map((GamesData, index) => {
+                {gamesData.map((GamesData, index) => {
                     return (
                         <div>
                            <img className='ChosenItem' src={GamesData.name} alt="gameproduct"></img>

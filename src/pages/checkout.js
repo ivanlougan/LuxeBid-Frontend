@@ -8,8 +8,6 @@ const Checkout = ({basket}) => {
 
     }, [])
 
-   
-
 
     return (
         <div className="checkout-container">
@@ -25,8 +23,7 @@ const Checkout = ({basket}) => {
               <input id='inputBox' placeholder='Last name'></input></div>
               <input id='inputBox' placeholder='Address name'></input>
               <input id='inputBox' placeholder='Post code'></input>
-           </div>
-           
+           </div>     
 
               <h2>Pay below</h2>
               <h4>Total: £{basket}</h4>
