@@ -22,11 +22,11 @@ function App() {
   // Global States
   const [gamesData, setGamesData] = useState([]);
   const [pricesInfo, setPricesInfo] = useState([]);
-
   const [basket, setBasket] = useState([0]);
   const [errorMsg, setErrorMsg] = useState("");
   const [signMsg, setSignMsg] = useState("");
   const [user, setUser] = useState(null);
+  const [watchlist, setWatchList] = useState([])
 
   useEffect(() => {
     const IGDBgames = async () => {
@@ -103,8 +103,7 @@ function App() {
       <HeaderBar 
         signMsg={signMsg} setSignMsg={setSignMsg} 
         user={user} setUser={setUser}/>
-
-      <BrowserRouter>
+      />
         <nav id="navbar">
           <Link to="/">Home</Link>
           <Link to="/checkout">Checkout</Link>
@@ -121,10 +120,9 @@ function App() {
 
           <Route path="signup" element={<Signup user={user} setUser={setUser}></Signup>}></Route>
           <Route path="checkout" element={<Checkout basket={basket}></Checkout>}></Route>
-          <Route path="profile" element={<Profile user={user}></Profile>}></Route>
+          <Route path="profile" element={<Profile user={user} watchlist={watchlist} setWatchList={setWatchList} gamesData={gamesData} setGamesData={setGamesData}></Profile>}></Route>
         </Routes>
-      </BrowserRouter>
-
+        
       <FooterBar />
 
     </div>

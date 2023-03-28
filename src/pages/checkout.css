@@ -1,6 +1,6 @@
 .checkoutBox {
     max-width: 900px;
-    height: 650px;
+    height: 100%;
     width: 100%;
     padding: 20px;
     display: grid;

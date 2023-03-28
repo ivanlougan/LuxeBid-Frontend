@@ -4,7 +4,7 @@ import "./header.css";
 import LuxeLogo from "../../images/LUXElogo2.png"
 import { loginUser } from "../../utils/user/login";
 
-const HeaderBar = ({signMsg, user, setUser}) => {
+const HeaderBar = ({signMsg, userData, setUser}) => {
 
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();

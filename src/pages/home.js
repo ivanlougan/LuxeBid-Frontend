@@ -6,9 +6,20 @@ import "./home.css";
 import { ProductCard } from '../components/productCard/ProductCard';
 
 const Home = ({
-    gamesData, setGamesData, basket, setBasket, pricesInfo, setPricesInfo
+  <div>
+    gamesData, setGamesData, basket, setBasket, pricesInfo, setPricesInfo, setErrorMsg, Games, GameList, Watchlist, setWatchList
 }) => {
-    //States?
+
+    const AddWatchList = (index) => {
+        let storedGames = [...Games]
+        let GameCopy = [...Watchlist]
+        GameCopy.push(storedGames.splice(index, 1)[0]);
+        GameList(storedGames);
+        setWatchList(GameCopy);
+         return (
+           <button onClick={() => AddWatchList}>Add to watch list</button>
+        )
+    }
 
     return (
         <div className="gameCard">
