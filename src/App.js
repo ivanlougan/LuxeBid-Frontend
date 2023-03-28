@@ -31,7 +31,7 @@ function App() {
   useEffect(() => {
     const IGDBgames = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_DEV_URL}getGames`, {
+        const response = await fetch(`${process.env.REACT_APP_BASE_URL}getGames`, {
           method: "GET",
           mode: "cors",
           headers: {
@@ -100,10 +100,6 @@ function App() {
   return (
     <div className="App">
 
-      <HeaderBar 
-        signMsg={signMsg} setSignMsg={setSignMsg} 
-        user={user} setUser={setUser}/>
-        
         <nav id="navbar">
           <Link to="/">Home</Link>
           <Link to="/checkout">Checkout</Link>
@@ -123,7 +119,6 @@ function App() {
           <Route path="profile" element={<Profile user={user} watchlist={watchlist} setWatchList={setWatchList} gamesData={gamesData} setGamesData={setGamesData}></Profile>}></Route>
         </Routes>
         
-      <FooterBar />
 
     </div>
   );

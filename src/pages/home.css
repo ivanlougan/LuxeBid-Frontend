@@ -4,8 +4,6 @@
     grid-template-columns: repeat(5, 20%);
     margin: 20px;
 
-    border: 2px solid rgba(255, 0, 191, 0.5);
-
 }
 
 .game-cards {

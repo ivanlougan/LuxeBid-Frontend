@@ -9,7 +9,7 @@ body {
   margin: 0;
   background: no-repeat;
   background-image: url("./images/luxe-bg2.png");
-  /* background-attachment: fixed; */
+  background-attachment: fixed;
   background-size: cover;
 }
 

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { faker } from '@faker-js/faker';
+import "./productCard.css"
 
 export const ProductCard = ({
     gamesData, basket, pricesInfo,
@@ -16,6 +17,8 @@ export const ProductCard = ({
                         <h3>{game.name}</h3>
                         <img src={game.image.thumb_url}></img>
                         <h4>£: {}</h4>
+                        <button className="add-to-basket" type="submit">+ Basket</button>
+                        <button className="add-to-watch" type="submit">+ Watchlist</button>
                     </div>
                     )
                 }
