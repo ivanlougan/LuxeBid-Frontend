@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
+import { Route, Routes, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { faker } from '@faker-js/faker';
 import './App.css';
@@ -10,8 +10,6 @@ import Profile from "./pages/profile";
 import Signup from "./pages/signup";
 
 // Global components
-import HeaderBar from "./components/header/Header";
-import FooterBar from './components/footer/Footer';
 
 // Functions
 import { getTokenFromCookie } from './common';
@@ -23,8 +21,8 @@ function App() {
   const [gamesData, setGamesData] = useState([]);
   const [pricesInfo, setPricesInfo] = useState([]);
   const [basket, setBasket] = useState([0]);
-  const [errorMsg, setErrorMsg] = useState("");
-  const [signMsg, setSignMsg] = useState("");
+  const [errorMsg, setErrorMsg] = useState();
+  const [signMsg, setSignMsg] = useState();
   const [user, setUser] = useState(null);
   const [watchlist, setWatchList] = useState([])
 
@@ -65,16 +63,16 @@ function App() {
       if (token === false) {
         setUser(null)
       } else {
-        loginWithToken(token)
+        loginWithToken(token, setUser)
       }
     }
   }, []);
 
   const loginWithToken = async (token) => {
     const persistantUser = await authCheck(token);
-
     await setUser(persistantUser.user);
-    // await setBasket()
+    // await setWatchList(persistantUser.watchlist);
+    // await setBasket() ??
   };
 
   // useEffect(() => {
@@ -100,30 +98,26 @@ function App() {
   return (
     <div className="App">
 
-      {/* <HeaderBar 
-        signMsg={signMsg} setSignMsg={setSignMsg} 
-        user={user} setUser={setUser}/> */}
-      
-        <nav id="navbar">
-          <Link to="/">Home</Link>
-          <Link to="/checkout">Checkout</Link>
-          <Link to="/signup">Signup</Link>
-          <Link to="/profile">Profile</Link>
-        </nav>
 
-        <Routes>
-          <Route path="/" element={<Home
-            gamesData={gamesData}
-            basket={basket} setBasket={setBasket}
-            errorMsg={errorMsg} setErrorMsg={setErrorMsg}
-            pricesInfo={pricesInfo} ></Home>}></Route>
+      <nav id="navbar">
+        <Link to="/">Home</Link>
+        <Link to="/checkout">Checkout</Link>
+        <Link to="/signup">Signup</Link>
+        <Link to="/profile">Profile</Link>
+      </nav>
 
-          <Route path="signup" element={<Signup user={user} setUser={setUser}></Signup>}></Route>
-          <Route path="checkout" element={<Checkout basket={basket}></Checkout>}></Route>
-          <Route path="profile" element={<Profile user={user} watchlist={watchlist} setWatchList={setWatchList} gamesData={gamesData} setGamesData={setGamesData}></Profile>}></Route>
-        </Routes>
-        
-      {/* <FooterBar /> */}
+      <Routes>
+        <Route path="/" element={<Home
+          gamesData={gamesData}
+          basket={basket} setBasket={setBasket}
+          errorMsg={errorMsg} setErrorMsg={setErrorMsg}
+          pricesInfo={pricesInfo} ></Home>}></Route>
+
+        <Route path="signup" element={<Signup user={user} setUser={setUser}></Signup>}></Route>
+        <Route path="checkout" element={<Checkout basket={basket}></Checkout>}></Route>
+        <Route path="profile" element={<Profile user={user} watchlist={watchlist} setWatchList={setWatchList} gamesData={gamesData} setGamesData={setGamesData}></Profile>}></Route>
+      </Routes>
+
 
     </div>
   );

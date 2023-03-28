@@ -1,6 +1,6 @@
 export const authCheck = async (jwtToken) => {
     try {
-        const response = await fetch(`${process.env.REACT_APP_BASE_URL}/users/authcheck`, {
+        const response = await fetch(`${process.env.REACT_APP_BASE_URL}users/authcheck`, {
             method: "GET",
             mode: "cors",
             headers: {

@@ -28,7 +28,6 @@ const Checkout = ({basket}) => {
               <h2>Pay below</h2>
               <h4>Total: £{basket}</h4>
               <div><button className='PayButton'>Pay now</button></div>
-
            </div>
          </div>
     )
