@@ -1,0 +1,28 @@
+.game-cards {
+    align-items: center;
+    padding: 10px;
+    border: 2px solid rgba(255, 0, 191, 0.5);
+    background-color: rgba(61, 15, 136, 0.2);
+    width: 80%;
+}
+.add-to-basket {
+    background-color: blueviolet;
+    border-radius: 5px;
+    margin: 5px;
+
+}
+
+.add-to-basket:hover {
+    cursor: pointer;
+
+}
+
+.add-to-watch {
+    background-color: blueviolet;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.add-to-watch:hover {
+    cursor: pointer;
+}
