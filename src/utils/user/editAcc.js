@@ -1,7 +1,7 @@
-const editAcc = async (username, email, password) => {
+export const editAcc = async (username, email, password) => {
     console.log(username)
     try {
-        const edit  = await fetch ("http://localhost/users/editAcc", {
+        const edit  = await fetch (`${process.env.REACT_APP_BASE_URL}users/editAcc`, {
             method: "POST",
             mode: "cors",
             headers: {

@@ -2,7 +2,7 @@ import { writeCookie} from "../../common"
 
 export const loginUser = async (username, password, setUser) => {
     try {
-        const response = await fetch("http://localhost/users/loginuser", {
+        const response = await fetch(`${process.env.REACT_APP_BASE_URL}users/loginuser`, {
             method: "POST",
             mode: "cors",
             headers: {
