@@ -23,7 +23,7 @@ function App() {
   const [basket, setBasket] = useState([0]);
   const [errorMsg, setErrorMsg] = useState();
   const [signMsg, setSignMsg] = useState();
-  const [user, setUser] = useState(null);
+  
   const [watchlist, setWatchList] = useState([]);
 
   useEffect(() => {
@@ -57,23 +57,7 @@ function App() {
     IGDBgames();
   }, []);
 
-  useEffect(() => {
-    if (document.cookie) {
-      let token = getTokenFromCookie("jwt_token");
-      if (token === false) {
-        setUser(null)
-      } else {
-        loginWithToken(token, setUser)
-      }
-    }
-  }, []);
-
-  const loginWithToken = async (token) => {
-    const persistantUser = await authCheck(token);
-    await setUser(persistantUser.user);
-    // await setWatchList(persistantUser.watchlist);
-    // await setBasket() ??
-  };
+  
 
   // useEffect(() => {
   //   const fetchData = async () => {
@@ -113,11 +97,13 @@ function App() {
           errorMsg={errorMsg} setErrorMsg={setErrorMsg}
           pricesInfo={pricesInfo} ></Home>}></Route>
 
-// removed user/setUser from signup components- not being used right now, removed to fix login
-// will have to rearrange state for login on signUp - not required for mvp
+{/* // removed user/setUser from signup components- not being used right now, removed to fix login
+// will have to rearrange state for login on signUp - not required for mvp */}
         <Route path="signup" element={<Signup ></Signup>}></Route>
         <Route path="checkout" element={<Checkout basket={basket}></Checkout>}></Route>
-        <Route path="profile" element={<Profile user={user} watchlist={watchlist} setWatchList={setWatchList} gamesData={gamesData} setGamesData={setGamesData}></Profile>}></Route>
+
+         {/* missing user={user} */}
+        <Route path="profile" element={<Profile  watchlist={watchlist} setWatchList={setWatchList} gamesData={gamesData} setGamesData={setGamesData}></Profile>}></Route>
       </Routes>
 
 
