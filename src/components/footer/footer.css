@@ -1,8 +1,13 @@
 .App-footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
     border: 2px solid rgba(255, 0, 191, 0.5);
     background-color: #1e0552;
     background-image: url("../../images/banner1.png");
     background-size: cover;
 
     bottom: 0px;
+    padding: 5px;
 }

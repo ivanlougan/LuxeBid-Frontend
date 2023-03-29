@@ -10,7 +10,7 @@ export const ProductCard = ({
     return (
         <div className="home-container">
                 <h1>THIS IS THE HOME PAGE</h1>
-                <h4>Total: £{basket}</h4>
+                {/* <h4>Total: £{basket}</h4> */}
             <div className="game-cards-container">
                 {gamesData.map((game, index) => {
                 return (
@@ -18,7 +18,7 @@ export const ProductCard = ({
                         <h3>{game.name}</h3>
                         <img src={game.image.thumb_url}></img>
                         <h4>£: {}</h4>
-                        <button onClick={() => AddWatchList}>Add to watch List</button> 
+                        <button id="addwatch-btn" onClick={() => AddWatchList}>+ Watchlist</button> 
                     </div> 
                     )
                 }

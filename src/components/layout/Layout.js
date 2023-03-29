@@ -14,7 +14,7 @@ const Layout = ({children}) => {
     <>
         <BrowserRouter>
             <UserContext.Provider value={{user, setUser}}>
-            <HeaderBar setUser={setUser}/>
+            <HeaderBar user={user} setUser={setUser}/>
                 <main>{children}</main>
             <FooterBar/>
             </UserContext.Provider>
