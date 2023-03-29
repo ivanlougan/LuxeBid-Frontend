@@ -113,7 +113,9 @@ function App() {
           errorMsg={errorMsg} setErrorMsg={setErrorMsg}
           pricesInfo={pricesInfo} ></Home>}></Route>
 
-        <Route path="signup" element={<Signup user={user} setUser={setUser}></Signup>}></Route>
+// removed user/setUser from signup components- not being used right now, removed to fix login
+// will have to rearrange state for login on signUp - not required for mvp
+        <Route path="signup" element={<Signup ></Signup>}></Route>
         <Route path="checkout" element={<Checkout basket={basket}></Checkout>}></Route>
         <Route path="profile" element={<Profile user={user} watchlist={watchlist} setWatchList={setWatchList} gamesData={gamesData} setGamesData={setGamesData}></Profile>}></Route>
       </Routes>
