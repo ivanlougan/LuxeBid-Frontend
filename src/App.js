@@ -24,12 +24,12 @@ function App() {
   const [errorMsg, setErrorMsg] = useState();
   const [signMsg, setSignMsg] = useState();
   const [user, setUser] = useState(null);
-  const [watchlist, setWatchList] = useState([])
+  const [watchlist, setWatchList] = useState([]);
 
   useEffect(() => {
     const IGDBgames = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_DEV_URL}getGames`, {
+        const response = await fetch(`${process.env.REACT_APP_BASE_URL}getGames`, {
           method: "GET",
           mode: "cors",
           headers: {
