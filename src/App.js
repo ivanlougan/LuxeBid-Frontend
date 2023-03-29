@@ -1,7 +1,8 @@
 import { Route, Routes, Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { faker } from '@faker-js/faker';
 import './App.css';
+import UserContext from './components/userContext/UserContext';
 
 // Page components
 import Home from "./pages/home";
@@ -17,19 +18,21 @@ import { authCheck } from './utils/user/authCheck';
 
 function App() {
 
+  const { user, setUser } = useContext(UserContext);
+
   // Global States
   const [gamesData, setGamesData] = useState([]);
   const [pricesInfo, setPricesInfo] = useState([]);
   const [basket, setBasket] = useState([0]);
   const [errorMsg, setErrorMsg] = useState();
   const [signMsg, setSignMsg] = useState();
-  const [user, setUser] = useState(null);
-  const [watchlist, setWatchList] = useState([])
+  
+  const [watchlist, setWatchList] = useState([]);
 
   useEffect(() => {
     const IGDBgames = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_DEV_URL}getGames`, {
+        const response = await fetch(`${process.env.REACT_APP_BASE_URL}getGames`, {
           method: "GET",
           mode: "cors",
           headers: {
@@ -57,23 +60,7 @@ function App() {
     IGDBgames();
   }, []);
 
-  useEffect(() => {
-    if (document.cookie) {
-      let token = getTokenFromCookie("jwt_token");
-      if (token === false) {
-        setUser(null)
-      } else {
-        loginWithToken(token, setUser)
-      }
-    }
-  }, []);
-
-  const loginWithToken = async (token) => {
-    const persistantUser = await authCheck(token);
-    await setUser(persistantUser.user);
-    // await setWatchList(persistantUser.watchlist);
-    // await setBasket() ??
-  };
+  
 
   // useEffect(() => {
   //   const fetchData = async () => {
@@ -113,9 +100,12 @@ function App() {
           errorMsg={errorMsg} setErrorMsg={setErrorMsg}
           pricesInfo={pricesInfo} ></Home>}></Route>
 
-        <Route path="signup" element={<Signup user={user} setUser={setUser}></Signup>}></Route>
+{/* // removed user/setUser from signup components- not being used right now, removed to fix login
+// will have to rearrange state for login on signUp - not required for mvp */}
+        <Route path="signup" element={<Signup ></Signup>}></Route>
         <Route path="checkout" element={<Checkout basket={basket}></Checkout>}></Route>
-        <Route path="profile" element={<Profile user={user} watchlist={watchlist} setWatchList={setWatchList} gamesData={gamesData} setGamesData={setGamesData}></Profile>}></Route>
+
+        <Route path="profile" element={<Profile user={user}  watchlist={watchlist} setWatchList={setWatchList} gamesData={gamesData} setGamesData={setGamesData}></Profile>}></Route>
       </Routes>
 
 
