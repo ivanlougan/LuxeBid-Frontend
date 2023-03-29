@@ -1,4 +1,7 @@
+
+
 export const addGames = async (token, games) => {
+     
     try {
         const response = await fetch(`${process.env.REACT_APP_BASE_URL}product/addgame`, {
             method: "POST",
@@ -19,11 +22,12 @@ export const addGames = async (token, games) => {
     }
 };
 
-export const AddWatchList = (index, Games, GameList, watchlist, setWatchList) => {
-    let storedGames = [...Games]
-    let GameCopy = [...watchlist]
-    GameCopy.push(storedGames.splice(index, 1)[0]);
-    GameList(storedGames);
-    setWatchList(GameCopy);
-    console.log(GameCopy, storedGames)
+export const AddWatchList = (index, gamesData, GameList, watchlist, setWatchList) => {
+    let storedGames = [...gamesData]
+    let GameCopy = [...GameList] 
+    GameCopy.push(gamesData.splice(index, 1)[0])
+    // GameList(storedGames);
+    // setWatchList(GameCopy);
+    console.log("AddWatchList")
+    console.log(gamesData)
 };

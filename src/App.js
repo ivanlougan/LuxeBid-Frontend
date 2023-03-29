@@ -14,6 +14,7 @@ import Signup from "./pages/signup";
 // Functions
 import { getTokenFromCookie } from './common';
 import { authCheck } from './utils/user/authCheck';
+import { ProductCard } from './components/productCard/ProductCard';
 
 function App() {
 
@@ -25,6 +26,8 @@ function App() {
   const [signMsg, setSignMsg] = useState();
   const [user, setUser] = useState(null);
   const [watchlist, setWatchList] = useState([])
+
+  const [GameList, setGameList] = useState([])
 
   useEffect(() => {
     const IGDBgames = async () => {
@@ -111,11 +114,12 @@ function App() {
           gamesData={gamesData}
           basket={basket} setBasket={setBasket}
           errorMsg={errorMsg} setErrorMsg={setErrorMsg}
-          pricesInfo={pricesInfo} ></Home>}></Route>
+          pricesInfo={pricesInfo} watchlist={watchlist} setWatchList={setWatchList} setGamesData={setGamesData} GameList={setGameList} ></Home>}></Route>
 
         <Route path="signup" element={<Signup user={user} setUser={setUser}></Signup>}></Route>
         <Route path="checkout" element={<Checkout basket={basket}></Checkout>}></Route>
-        <Route path="profile" element={<Profile user={user} watchlist={watchlist} setWatchList={setWatchList} gamesData={gamesData} setGamesData={setGamesData}></Profile>}></Route>
+        <Route path="profile" element={<Profile user={user} watchlist={watchlist} setWatchList={setWatchList} gamesData={gamesData} setGamesData={setGamesData} GameList={setGameList}></Profile>}></Route>
+        <Route path="ProductCard" element={<ProductCard user={user} watchlist={watchlist} setWatchList={setWatchList} gamesData={gamesData} setGamesData={setGamesData} GameList={setGameList}></ProductCard>}></Route>
       </Routes>
 
 
