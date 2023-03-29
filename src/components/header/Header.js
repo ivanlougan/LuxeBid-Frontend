@@ -8,7 +8,7 @@ import { getTokenFromCookie } from '../../common';
 import { authCheck } from '../../utils/user/authCheck';
 
 
-const HeaderBar = ({signMsg, userData, setUser}) => {
+const HeaderBar = ({signMsg, userData, user, setUser}) => {
 
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
@@ -34,13 +34,16 @@ const HeaderBar = ({signMsg, userData, setUser}) => {
 
     const loginSubmit = async (e) => {
         e.preventDefault();
-        console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        
         try {
             await loginUser(username, password, setUser);
         } catch (error) {
             console.log(error)
         }
+        
+        e.target.reset();
     };
+
 
     return (
         <header className="App-header">

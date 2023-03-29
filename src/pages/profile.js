@@ -16,10 +16,11 @@ const Profile = ({ Games, GameList, watchlist, setWatchList, gamesData, user }) 
             <div className="profileBox">
                 <div className="Profilepic">
                     <img id="ProfilePicture" src={Icon} alt="ProfileImage" />
-                    <div id="Userinformation"> <h2>Username:</h2>
-                        <h2>email: </h2>
+                    <div id="Userinformation"> <h2>Username: {user.username}</h2>
+                        <h2>email: {user.email}</h2>
                     </div>
-                    <div className="buttonLayout"><button id="EditButton">Edit Profile</button>
+                    <div className="buttonLayout">
+                        <button id="EditButton">Edit Profile</button>
                         <button id="EditButton">Logout</button>
                     </div>
 
