@@ -8,6 +8,7 @@ export const authCheck = async (jwtToken) => {
                 Authorization: `${jwtToken}`,
             },
         });
+        console.log("auth check respomse:   "   , response);
         const data = await response.json();
         return data
     } catch (error) {

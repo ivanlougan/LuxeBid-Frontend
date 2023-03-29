@@ -1,7 +1,8 @@
 import { Route, Routes, Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { faker } from '@faker-js/faker';
 import './App.css';
+import UserContext from './components/userContext/UserContext';
 
 // Page components
 import Home from "./pages/home";
@@ -16,6 +17,8 @@ import { getTokenFromCookie } from './common';
 import { authCheck } from './utils/user/authCheck';
 
 function App() {
+
+  const { user, setUser } = useContext(UserContext);
 
   // Global States
   const [gamesData, setGamesData] = useState([]);
@@ -102,8 +105,7 @@ function App() {
         <Route path="signup" element={<Signup ></Signup>}></Route>
         <Route path="checkout" element={<Checkout basket={basket}></Checkout>}></Route>
 
-         {/* missing user={user} */}
-        <Route path="profile" element={<Profile  watchlist={watchlist} setWatchList={setWatchList} gamesData={gamesData} setGamesData={setGamesData}></Profile>}></Route>
+        <Route path="profile" element={<Profile user={user}  watchlist={watchlist} setWatchList={setWatchList} gamesData={gamesData} setGamesData={setGamesData}></Profile>}></Route>
       </Routes>
 
 
