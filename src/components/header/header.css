@@ -20,6 +20,7 @@
     display: flex;
     align-items: center;  
     justify-content: space-evenly;  
+    padding-left: 15px;
 }
 
 .login-container {
@@ -37,5 +38,10 @@
     text-shadow: 2px 2px 3px black;
     font-family: 'Rajdhani', sans-serif;  color: rgb(194, 194, 194);
 
+}
+
+.logout-button {
+    margin-left: 45px;
+    
 }
 

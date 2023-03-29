@@ -6,12 +6,21 @@ import { loginUser } from "../../utils/user/login";
 
 import { getTokenFromCookie } from '../../common';
 import { authCheck } from '../../utils/user/authCheck';
+import { useCookies } from "react-cookie"; // npm i react-cookie
+
 
 
 const HeaderBar = ({signMsg, userData, user, setUser}) => {
 
-    const [username, setUsername] = useState();
-    const [password, setPassword] = useState();
+  
+  const [username, setUsername] = useState();
+  const [password, setPassword] = useState();
+
+  const [cookies, setCookie, removeCookie] = useCookies(['cookie-name']);
+  
+  
+
+
 
     useEffect(() => {
         if (document.cookie) {
@@ -42,7 +51,16 @@ const HeaderBar = ({signMsg, userData, user, setUser}) => {
         }
         
         e.target.reset();
+        
     };
+
+    const logout = (e) => {     
+        removeCookie("jwt_token");  
+        window.location.reload(false); 
+ }
+
+
+    if (!document.cookie) {
 
 
     return (
@@ -57,6 +75,21 @@ const HeaderBar = ({signMsg, userData, user, setUser}) => {
             <img id="logo" src={LuxeLogo} alt="logo"></img>
         </header>
     )
+    } else {
+
+      return (
+        <div className="logout">
+          <header className="App-header">
+          <button className='logout-button' type="submit" onClick={logout}> Logout </button>
+
+          <h2>Hello user!</h2>
+          
+          <h4>{signMsg}</h4>
+          <img id="logo" src={LuxeLogo} alt="logo"></img>
+      </header>
+        </div>
+      )
+    }
 };
 
 export default HeaderBar;
