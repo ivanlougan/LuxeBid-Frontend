@@ -8,7 +8,7 @@ import { getTokenFromCookie } from '../../common';
 import { authCheck } from '../../utils/user/authCheck';
 
 
-const HeaderBar = ({signMsg, userData, setUser}) => {
+const HeaderBar = ({signMsg, userData, user, setUser}) => {
 
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();

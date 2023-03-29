@@ -32,9 +32,10 @@
 }
 
 h2 {
+    /* font-family:Georgia, 'Times New Roman', Times, serif; */
+    /* color: rgb(195, 249, 80); */
+
     font-size: 40px;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    color: rgb(195, 249, 80);
     text-shadow: 2px 2px 3px black;
 }
 
@@ -43,7 +44,7 @@ h2 {
     width: 115px;
     height: 40px;
 }
-
+/* 
 .register-button:hover {
     cursor: pointer;
-}
+} */
