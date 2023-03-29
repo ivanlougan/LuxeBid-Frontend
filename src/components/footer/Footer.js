@@ -6,7 +6,8 @@ const FooterBar = ({errorMsg, signMsg}) => {
 
     return (
         <footer className="App-footer">
-            <h3>Sweet footer</h3>
+            <h4></h4>
+            <button id="logout-btn">Logout</button>
       </footer>
     )
 };

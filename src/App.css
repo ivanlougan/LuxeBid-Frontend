@@ -1,7 +1,8 @@
 /* Universal styling for every page */
+  @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap');
+
 * {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  color: rgb(194, 194, 194);
+  font-family: 'Rajdhani', sans-serif;  color: rgb(194, 194, 194);
 
 }
 
@@ -43,4 +44,15 @@ body {
 a {
   text-decoration: none;
   color: rgb(194, 194, 194);
+}
+
+button {
+  background-color: blueviolet;
+  width: 115px;
+  height: 40px;
+
+}
+
+button:hover {
+  cursor: pointer;
 }
