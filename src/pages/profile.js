@@ -28,7 +28,9 @@ const Profile = ({ Games, GameList, watchlist, setWatchList, gamesData, user }) 
                 </div>
 
                 
-                <div> <div>  <h2 className="WatchTitle">Watch List</h2></div>
+                <div className="watchWrapper"> 
+                    <div className="watchTitleWrapper">  
+                        <h2 className="WatchTitle">Watch List</h2></div>
 
                     <div className="watchListItems">{gamesData.map((GamesData, index) => {
                         return (
