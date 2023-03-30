@@ -1,3 +1,58 @@
+/* Universal styling for every page */
+  @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap');
+
+* {
+  font-family: 'Rajdhani', sans-serif;  color: rgb(194, 194, 194);
+
+}
+
+body {
+  margin: 0;
+  background: no-repeat;
+  background-image: url("./images/luxe-bg2.png");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  /* height: 90vh; */
+}
+
+#navbar {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  
+  font-size: 20px;
+  border: 2px solid rgba(255, 0, 191, 0.5);
+  height: 30px;
+  background-color: #1e0552;
+  background-image: url("./images/banner1.png");
+  background-size: cover;
+
+/* Optional: Have Navigation bar always be on top of the screen when scrolling down */
+  position: sticky;
+  top: 0px;
+
+}
+
+a {
+  text-decoration: none;
+  color: rgb(194, 194, 194);
+}
+
+button {
+  background-color: blueviolet;
+  width: 115px;
+  height: 40px;
+
+}
+
+button:hover {
+  cursor: pointer;
 }
