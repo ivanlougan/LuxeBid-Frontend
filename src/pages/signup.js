@@ -31,7 +31,7 @@ const Signup = ({ }) => {
                 <form onSubmit={submitHandler} >
                     <input className="input-container" placeholder='username' onChange={(e) => setUsername(e.target.value)} />
                     <input className="input-container" placeholder="email" onChange={(e) => setEmail(e.target.value)} />
-                    <input className="input-container" placeholder="password" onChange={(e) => setPassword(e.target.value)} />
+                    <input type="password" className="input-container" placeholder="password" onChange={(e) => setPassword(e.target.value)} />
                     <button className='register-button' type='submit' > REGISTER BRO </button>
                 </form>
             </div>

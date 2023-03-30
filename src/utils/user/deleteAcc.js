@@ -5,7 +5,7 @@ export const deleteAcc = async (username, email, password) => {
     try {
         const token = getTokenFromCookie("jwt_token")
 
-        const response = await fetch(`${process.env.REACT_APP_BASE_URL}users/deleteAcc`, {
+        const response = await fetch(`${process.env.REACT_APP_BASE_URL}users/deleteuser`, {
             method: "DELETE",
             mode: "cors",
             headers: {
