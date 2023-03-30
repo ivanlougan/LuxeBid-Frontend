@@ -1,6 +1,6 @@
 .App-footer {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: end;
     align-items: center;
     text-align: center;
     border: 2px solid rgba(255, 0, 191, 0.5);
@@ -10,4 +10,12 @@
 
     bottom: 0px;
     padding: 5px;
+}
+
+h4 {
+    margin: 10px;
+}
+
+p {
+    margin: 10px;
 }

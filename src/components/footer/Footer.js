@@ -5,7 +5,11 @@ const FooterBar = ({errorMsg, signMsg}) => {
     
     return (
         <footer className="App-footer">
-      </footer>
+        
+            <h4> CONTACT US: </h4>
+            <p>luxeteam@luxegaming.com</p>
+
+        </footer>
     )
 };
 
