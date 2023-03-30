@@ -20,11 +20,10 @@ export const deleteGame = async (token, game) => {
     }
 };
 
-export const RemoveWatchList = (index, Games, GameList, watchlist, setWatchList) => {
-    let storedGames = [...Games]
-    let GameCopy = [...watchlist];
-    storedGames.push(GameCopy.splice(index, 1)[0])
-    GameList(storedGames)
-    setWatchList(GameCopy);
-    console.log("RemoveWatchList")
+export const RemoveWatchList = (e, watchlist, setWatchList) => {
+    let watchlistCopy = [...watchlist];
+    console.log("!!!!!!!!")
+    console.log(e.target.value)
+    setWatchList(watchlistCopy.filter(el => el.name !== e.target.value ))
+    console.log(watchlist)
 };
