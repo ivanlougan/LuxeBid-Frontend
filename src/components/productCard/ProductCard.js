@@ -9,7 +9,9 @@ export const ProductCard = ({
     console.log("watchlist ProductCardjs", watchlist)
     return (
         <div className="home-container">
+        
                 <h1>CHECK OUT OUR LUXE GAMES</h1>
+
                 {/* <h4>Total: £{basket}</h4> */}
             <div className="game-cards-container">
                 {gamesData.map((game, index) => {
