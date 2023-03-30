@@ -10,7 +10,7 @@ import Checkout from "./pages/checkout";
 import Profile from "./pages/profile";
 import Signup from "./pages/signup";
 
-// Global components
+// Global components: moved to layout
 
 // Functions
 import { getTokenFromCookie } from './common';
@@ -63,8 +63,6 @@ function App() {
     IGDBgames();
   }, []);
 
-  
-
   // useEffect(() => {
   //   const fetchData = async () => {
   //       try {
@@ -88,7 +86,6 @@ function App() {
   return (
     <div className="App">
 
-
       <nav id="navbar">
         <Link to="/">Home</Link>
         <Link to="/checkout">Checkout</Link>
@@ -102,17 +99,12 @@ function App() {
           basket={basket} setBasket={setBasket}
           errorMsg={errorMsg} setErrorMsg={setErrorMsg}
           pricesInfo={pricesInfo} user={user} watchlist={watchlist} setWatchList={setWatchList} setGamesData={setGamesData} GameList={setGameList}></Home>}></Route>
-
 {/* // removed user/setUser from signup components- not being used right now, removed to fix login
 // will have to rearrange state for login on signUp - not required for mvp */}
         <Route path="signup" element={<Signup ></Signup>}></Route>
         <Route path="checkout" element={<Checkout basket={basket}></Checkout>}></Route>
         <Route path="profile" element={<Profile user={user} watchlist={watchlist} setWatchList={setWatchList} gamesData={gamesData} setGamesData={setGamesData} GameList={setGameList}></Profile>}></Route>
-        
-
       </Routes>
-
-
     </div>
   );
 };
