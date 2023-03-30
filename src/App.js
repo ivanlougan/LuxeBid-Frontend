@@ -1,6 +1,5 @@
 import { Route, Routes, Link } from 'react-router-dom';
 import { useState, useEffect, useContext } from 'react';
-import { faker } from '@faker-js/faker';
 import './App.css';
 import UserContext from './components/userContext/UserContext';
 
@@ -13,24 +12,17 @@ import Signup from "./pages/signup";
 // Global components: moved to layout
 
 // Functions
-import { getTokenFromCookie } from './common';
-import { authCheck } from './utils/user/authCheck';
-import { ProductCard } from './components/productCard/ProductCard';
 
 function App() {
 
-  const { user, setUser } = useContext(UserContext);
+  const { user } = useContext(UserContext);
 
   // Global States
   const [gamesData, setGamesData] = useState([]);
-  const [pricesInfo, setPricesInfo] = useState([]);
   const [basket, setBasket] = useState([0]);
   const [errorMsg, setErrorMsg] = useState();
-  const [signMsg, setSignMsg] = useState();
   
   const [watchlist, setWatchList] = useState([]);
-
-  const [GameList, setGameList] = useState([])
 
   useEffect(() => {
     const IGDBgames = async () => {
@@ -46,41 +38,13 @@ function App() {
           setErrorMsg("Error: cannot fetch data from API")
         }
         const data = await response.json();
-        // const newData = data.map((newObject) => {
-        //   return({
-        //     name: newData.data.name,
-        //     img: newData.data.thumb_url,
-        //     price: faker.commerce.price(10, 70)
-        //   })
-        // })
         setGamesData(data.data);
-        console.log("gamesData state: ", data.data)
-        return data;
       } catch (error) {
         console.log(error);
       }
     };
     IGDBgames();
   }, []);
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //       try {
-  //           const gameInfo = []
-  //           for (let i = 0; i < 10; i++) {
-  //               gameInfo.push({
-  //                   price: faker.commerce.price(10, 70),
-  //               })
-  //           }
-  //           setPricesInfo(gameInfo)
-  //           console.log("pricesInfo state: ", gameInfo)
-  //       } catch (error) {
-  //         console.log(error)
-  //           setErrorMsg("Information unavailable")
-  //       }
-  // };
-  // fetchData();
-  // }, []);
 
   // Passing the global states down to the components that require it
   return (
@@ -97,13 +61,12 @@ function App() {
         <Route path="/" element={<Home
           gamesData={gamesData}
           basket={basket} setBasket={setBasket}
-          errorMsg={errorMsg} setErrorMsg={setErrorMsg}
-          pricesInfo={pricesInfo} user={user} watchlist={watchlist} setWatchList={setWatchList} setGamesData={setGamesData} GameList={setGameList}></Home>}></Route>
+          errorMsg={errorMsg} setErrorMsg={setErrorMsg} user={user} watchlist={watchlist} setWatchList={setWatchList} setGamesData={setGamesData}></Home>}></Route>
 {/* // removed user/setUser from signup components- not being used right now, removed to fix login
 // will have to rearrange state for login on signUp - not required for mvp */}
         <Route path="signup" element={<Signup ></Signup>}></Route>
         <Route path="checkout" element={<Checkout basket={basket}></Checkout>}></Route>
-        <Route path="profile" element={<Profile user={user} watchlist={watchlist} setWatchList={setWatchList} gamesData={gamesData} setGamesData={setGamesData} GameList={setGameList}></Profile>}></Route>
+        <Route path="profile" element={<Profile user={user} watchlist={watchlist} setWatchList={setWatchList} gamesData={gamesData} setGamesData={setGamesData} ></Profile>}></Route>
       </Routes>
     </div>
   );

@@ -1,12 +1,6 @@
-import { useState, useEffect } from 'react';
 import "./checkout.css";
 
 const Checkout = ({basket}) => {
-    //States?
-
-    useEffect(() => {
-
-    }, [])
 
 
     return (

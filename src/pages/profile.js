@@ -1,11 +1,9 @@
-// import { profile } from "console";
-import { useEffect, useState } from "react";
 import { RemoveWatchList } from "../utils/games/removeGame";
 import { deleteAcc } from "../utils/user/deleteAcc"
 import Icon from "../images/user-icon-jpg-18.jpg"
 import "./profile.css";
 
-const Profile = ({ Games, GameList, watchlist, setWatchList, gamesData, user }) => {
+const Profile = ({ watchlist, setWatchList, gamesData, user }) => {
 
 
     if (document.cookie) {

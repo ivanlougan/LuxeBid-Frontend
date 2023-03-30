@@ -30,7 +30,7 @@ const HeaderBar = ({ signMsg, userData, user, setUser }) => {
         loginWithToken(token)
       }
     }
-  }, []);
+  }, []); // eslint-disable-line no-eval
 
   const loginWithToken = async (token) => {
     console.log("login with token: ", token);
@@ -56,6 +56,7 @@ const HeaderBar = ({ signMsg, userData, user, setUser }) => {
   const logout = (e) => {
     removeCookie("jwt_token");
     window.location.reload(false);
+    console.log(cookies, setCookie);
   }
 
 
