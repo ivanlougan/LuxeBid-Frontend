@@ -9,7 +9,6 @@ import { authCheck } from '../../utils/user/authCheck';
 import { useCookies } from "react-cookie"; // npm i react-cookie
 
 
-
 const HeaderBar = ({signMsg, userData, user, setUser}) => {
 
   
