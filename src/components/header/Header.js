@@ -26,7 +26,11 @@ const HeaderBar = ({signMsg, userData, user, setUser}) => {
         if (document.cookie) {
           let token = getTokenFromCookie("jwt_token");
           if (token === false) {
-            setUser(null)
+            setUser({
+              username: null,
+              email: null,
+              password: null
+            })
           } else {
             loginWithToken(token)
           }
@@ -68,7 +72,7 @@ const HeaderBar = ({signMsg, userData, user, setUser}) => {
             <form className="login" onSubmit={loginSubmit}>
                 <h2 className="login-title" > Login </h2>
                 <input className="login-container" placeholder="Username" onChange={(e) => setUsername(e.target.value)} />
-                <input className="login-container" placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
+                <input type="password" className="login-container" placeholder="Password" onChange={(e) => setPassword(e.target.value)}/>
                 <button className='register-button' type="submit"> Login </button>
             </form>
             <h4>{signMsg}</h4>
@@ -82,7 +86,7 @@ const HeaderBar = ({signMsg, userData, user, setUser}) => {
           <header className="App-header">
           <button className='logout-button' type="submit" onClick={logout}> Logout </button>
 
-          <h2>Hello user!</h2>
+          <h2> Welcome back! {user.username} </h2>
           
           <h4>{signMsg}</h4>
           <img id="logo" src={LuxeLogo} alt="logo"></img>
