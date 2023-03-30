@@ -114,12 +114,12 @@ function App() {
           gamesData={gamesData}
           basket={basket} setBasket={setBasket}
           errorMsg={errorMsg} setErrorMsg={setErrorMsg}
-          pricesInfo={pricesInfo} watchlist={watchlist} setWatchList={setWatchList} setGamesData={setGamesData} GameList={setGameList} ></Home>}></Route>
+          pricesInfo={pricesInfo} user={user} watchlist={watchlist} setWatchList={setWatchList} setGamesData={setGamesData} GameList={setGameList}></Home>}></Route>
 
         <Route path="signup" element={<Signup user={user} setUser={setUser}></Signup>}></Route>
         <Route path="checkout" element={<Checkout basket={basket}></Checkout>}></Route>
         <Route path="profile" element={<Profile user={user} watchlist={watchlist} setWatchList={setWatchList} gamesData={gamesData} setGamesData={setGamesData} GameList={setGameList}></Profile>}></Route>
-        <Route path="ProductCard" element={<ProductCard user={user} watchlist={watchlist} setWatchList={setWatchList} gamesData={gamesData} setGamesData={setGamesData} GameList={setGameList}></ProductCard>}></Route>
+        
       </Routes>
 
 

@@ -7,7 +7,7 @@ import { AddWatchList } from '../utils/games/addGame';
 import { ProductCard } from '../components/productCard/ProductCard';
 
 const Home = ({
-    gamesData, setGamesData, basket, setBasket, pricesInfo, setPricesInfo, setErrorMsg, Games, GameList, Watchlist, setWatchList
+    gamesData, setGamesData, basket, setBasket, pricesInfo, setPricesInfo, setErrorMsg, Games, GameList, watchlist, setWatchList
 }) => {
 
     return (
@@ -15,7 +15,7 @@ const Home = ({
         <ProductCard
             gamesData={gamesData} setGamesData={setGamesData}
             basket={basket} setBasket={setBasket}
-            pricesInfo={pricesInfo} setPricesInfo={setPricesInfo}  
+            pricesInfo={pricesInfo} setPricesInfo={setPricesInfo}  watchlist={watchlist} setWatchList={setWatchList} 
         />
         </div> 
     )

@@ -9,7 +9,7 @@ import "./profile.css";
 const Profile = ({ Games, GameList, watchlist, setWatchList, gamesData, user }) => {
 
 
-    console.log("!!!!!!!!")
+    console.log("!!!!!!!!", watchlist)
     console.log(GameList)   
     return (
         <div className="MainBox">
@@ -32,11 +32,11 @@ const Profile = ({ Games, GameList, watchlist, setWatchList, gamesData, user }) 
 
                 <div> <div>  <h2 className="WatchTitle">Watch List</h2></div>
 
-                    <div className="watchListItems">{gamesData.map((product, index) => {
+                    <div className="watchListItems">{watchlist.map((product, index) => {
                         return (
-                            <div key={index} className="List">
+                            <div key={index} className="List" title={product.name}>
                                 <p>{product.name}</p>
-                                <button onClick={() => RemoveWatchList(index, gamesData, watchlist, setWatchList)}>Remove from watchlist</button>
+                                <button value={product.name} onClick={(e) => RemoveWatchList(e, watchlist, setWatchList)}>Remove from watchlist</button>
                             </div>
                             
                         )

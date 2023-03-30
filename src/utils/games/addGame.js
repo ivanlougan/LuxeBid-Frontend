@@ -22,12 +22,23 @@ export const addGames = async (token, games) => {
     }
 };
 
-export const AddWatchList = (index, gamesData, GameList, watchlist, setWatchList) => {
-    let storedGames = [...gamesData]
-    let GameCopy = [...GameList] 
-    GameCopy.push(gamesData.splice(index, 1)[0])
-    // GameList(storedGames);
-    // setWatchList(GameCopy);
-    console.log("AddWatchList")
-    console.log(gamesData)
+export const AddWatchList = (gameName, gameImage, setWatchList, watchlist ) => {
+    console.log("!!!!!!!!!!")
+    // let watchlist = []
+    const newGameToWatchlist = {
+        name: gameName, 
+        image: gameImage,
+    }
+    // watchlist.push(newGameToWatchlist)
+    setWatchList([...watchlist,newGameToWatchlist])
+    // let storedGames = [...gamesData]
+    // // let GameCopy = [...watchlist] 
+    // console.log(watchlist)
+    // // gamesData.push(storedGames)
+    // gamesData.push(storedGames.splice(index, 1)[0])
+    // GamesData(storedGames);
+    // // setWatchList(GameCopy);
+    // console.log("AddWatchList")
+    // // console.log(gamesData)
 };
+
