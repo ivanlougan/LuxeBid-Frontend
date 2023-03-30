@@ -43,7 +43,7 @@ const Profile = ({ Games, GameList, watchlist, setWatchList, gamesData, user }) 
                     </div>
                 </div>
             </div>
-            <button id="DeleteAccountButton" onClick={(e) => deleteAcc()}>Delete Account</button>
+            <button id="DeleteAccountButton" onClick={(e) => deleteAcc(user)}>Delete Account</button>
         </div>
     )} else {
         return (
