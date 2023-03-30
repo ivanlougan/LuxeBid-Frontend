@@ -9,8 +9,9 @@ import "./profile.css";
 const Profile = ({ Games, GameList, watchlist, setWatchList, gamesData, user }) => {
 
 
-    console.log("!!!!!!!!", watchlist)
-    console.log(GameList)   
+    
+    
+
     return (
         <div className="MainBox">
             <div id="title">
@@ -26,7 +27,6 @@ const Profile = ({ Games, GameList, watchlist, setWatchList, gamesData, user }) 
                     </div>
                     <div className="buttonLayout">
                         <button id="EditButton">Edit Profile</button>
-                        <button id="EditButton">Logout</button>
                     </div>
 
 

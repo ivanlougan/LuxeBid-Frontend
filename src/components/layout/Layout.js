@@ -7,7 +7,7 @@ import UserContext from "../userContext/UserContext";
 
 const Layout = ({children}) => {
 
-  console.log("leyiyt childrem", children)
+  
   const [user, setUser] = useState({username: null, email: null, password: null});
 
   return (

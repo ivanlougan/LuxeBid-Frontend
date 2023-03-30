@@ -6,8 +6,8 @@ const FooterBar = ({errorMsg, signMsg}) => {
 
     return (
         <footer className="App-footer">
-            <h4></h4>
-            <button id="logout-btn">Logout</button>
+            <h4> CONTACT US: </h4>
+            <p>luxeteam@luxegaming.com</p>
       </footer>
     )
 };
