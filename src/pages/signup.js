@@ -12,7 +12,7 @@ const Signup = ({ }) => {
 
     const submitHandler = async (e) => {
         e.preventDefault();
-        console.log("Signup submit")
+        console.log("Signup submit");
 
         await register(username, email, password);
         e.target.reset();

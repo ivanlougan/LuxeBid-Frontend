@@ -15,3 +15,31 @@
 #logo {
     width: 250px;
 }
+
+.login {
+    display: flex;
+    align-items: center;  
+    justify-content: space-evenly;  
+    padding-left: 15px;
+}
+
+.login-container {
+    width: 200px;
+    height: 30px;
+    margin: 12px;
+    display: flex;
+    box-shadow: 0px 0px 9px 5px rgba(255, 0, 191, 0.5);
+    border-radius: 10px;
+
+}
+
+.login-title {
+    font-size: 30px;
+    text-shadow: 2px 2px 3px black;
+    font-family: 'Rajdhani', sans-serif;  color: rgb(194, 194, 194);
+}
+
+.logout-button {
+    margin-left: 45px;
+}
+

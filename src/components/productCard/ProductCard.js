@@ -10,7 +10,7 @@ export const ProductCard = ({
     return (
         <div className="home-container">
                 <h1>THIS IS THE HOME PAGE</h1>
-                <h4>Total: £{basket}</h4>
+                {/* <h4>Total: £{basket}</h4> */}
             <div className="game-cards-container">
                 {gamesData.map((game, index) => {
                 return (
