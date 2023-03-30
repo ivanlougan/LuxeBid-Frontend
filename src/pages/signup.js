@@ -4,7 +4,7 @@ import pic from "../images/signuppic.png";
 import "../pages/signup.css";
 
 
-const Signup = ({ }) => {
+const Signup = () => {
     //States?
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
@@ -21,11 +21,9 @@ const Signup = ({ }) => {
     return (
 
         <div className="signup-container">
-            {/* container for image*/}
             <div className="signup-image-container">
-                <img id="picture" src={pic} alt="image" />
+                <img id="picture" src={pic} alt="game-picture" />
             </div>
-            {/* container for form */}
             <div className="signup-form-container">
                 <h2> Please provide your details </h2>
                 <form onSubmit={submitHandler} >

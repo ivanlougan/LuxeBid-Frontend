@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import HeaderBar from "../header/Header";
 import FooterBar from "../footer/Footer";
 import UserContext from "../userContext/UserContext";
@@ -16,7 +16,7 @@ const Layout = ({children}) => {
             <UserContext.Provider value={{user, setUser}}>
             <HeaderBar user={user} setUser={setUser}/>
                 <main>{children}</main>
-            {/* <FooterBar/> */}
+            <FooterBar/>
             </UserContext.Provider>
         </BrowserRouter>
     </>
