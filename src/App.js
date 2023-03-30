@@ -15,6 +15,7 @@ import Signup from "./pages/signup";
 // Functions
 import { getTokenFromCookie } from './common';
 import { authCheck } from './utils/user/authCheck';
+import { ProductCard } from './components/productCard/ProductCard';
 
 function App() {
 
@@ -28,6 +29,8 @@ function App() {
   const [signMsg, setSignMsg] = useState();
   
   const [watchlist, setWatchList] = useState([]);
+
+  const [GameList, setGameList] = useState([])
 
   useEffect(() => {
     const IGDBgames = async () => {
@@ -98,14 +101,15 @@ function App() {
           gamesData={gamesData}
           basket={basket} setBasket={setBasket}
           errorMsg={errorMsg} setErrorMsg={setErrorMsg}
-          pricesInfo={pricesInfo} ></Home>}></Route>
+          pricesInfo={pricesInfo} user={user} watchlist={watchlist} setWatchList={setWatchList} setGamesData={setGamesData} GameList={setGameList}></Home>}></Route>
 
 {/* // removed user/setUser from signup components- not being used right now, removed to fix login
 // will have to rearrange state for login on signUp - not required for mvp */}
         <Route path="signup" element={<Signup ></Signup>}></Route>
         <Route path="checkout" element={<Checkout basket={basket}></Checkout>}></Route>
+        <Route path="profile" element={<Profile user={user} watchlist={watchlist} setWatchList={setWatchList} gamesData={gamesData} setGamesData={setGamesData} GameList={setGameList}></Profile>}></Route>
+        
 
-        <Route path="profile" element={<Profile user={user}  watchlist={watchlist} setWatchList={setWatchList} gamesData={gamesData} setGamesData={setGamesData}></Profile>}></Route>
       </Routes>
 
 
