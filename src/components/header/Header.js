@@ -30,7 +30,8 @@ const HeaderBar = ({ signMsg, userData, user, setUser }) => {
         loginWithToken(token)
       }
     }
-  }, []); // eslint-disable-line no-eval
+    // eslint-disable-next-line
+  }, []); 
 
   const loginWithToken = async (token) => {
     console.log("login with token: ", token);

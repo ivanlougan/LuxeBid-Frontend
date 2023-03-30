@@ -22,7 +22,7 @@ const Signup = () => {
 
         <div className="signup-container">
             <div className="signup-image-container">
-                <img id="picture" src={pic} alt="game-picture" />
+                <img id="picture" src={pic} alt="game" />
             </div>
             <div className="signup-form-container">
                 <h2> Please provide your details </h2>
